@@ -10,7 +10,7 @@ def get_subjects(site):
         with open(f'resources/subjects_{site}.txt','r') as f:
             return [s.replace('\n','') for s in f.readlines()]
 
-
+localrules: get_subject_list, download_mri_zip
 
 rule get_subject_list:
     params:
@@ -42,9 +42,10 @@ rule make_dicom_tar:
         zipfile = 'raw/site-{site}/sub-{subject}/mri.zip'
     params:
         file_match = '*/scans/*/resources/DICOM/files/*',
-        temp_dir = 'raw/site-{site}/sub-{subject}/mri_unzip'
+        temp_dir = os.path.join(config['tmp_download'],'raw/site-{site}/sub-{subject}/mri_unzip')
     output:
         tar = 'raw/site-{site}/sub-{subject}/mri/sub-{subject}.tar'
+    group: 'dl'
     shell:
         'unzip -d {params.temp_dir} {input.zipfile} {params.file_match} && '
         'tar -cvf {output.tar} {params.temp_dir}  && rm -rf {params.temp_dir}'
@@ -59,6 +60,7 @@ rule tar_to_bids:
         temp_bids_dir = 'raw/site-{site}/sub-{subject}/mri/temp_bids'
     output:
         dir = directory('bids/site-{site}/sub-{subject}')
+    group: 'dl'
     shell: 
         "singularity run -e {input.container} -o {params.temp_bids_dir} "
         "  -h {input.heuristic} -N 1 -T 'sub-{{subject}}' {input.tar} || true && " #force clean exit for tar2bids

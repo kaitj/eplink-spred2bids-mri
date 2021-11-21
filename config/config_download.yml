@@ -4,6 +4,9 @@ sites:
   - TWH
   - HSC
 
+
+tmp_download: '/localscratch'
+
 remote_path_mri: '/data/projects/EPL31_{site}/experiments/EPL31_{site}_{subject}_01_SE01_MR'
 
 tar2bids:
