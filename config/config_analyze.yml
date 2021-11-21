@@ -1,0 +1,145 @@
+
+bids_dir:
+  TWH: '/home/ROBARTS/alik/graham/ext-bids/eplink_phase3/twh/EPL31_MRI_BIDS/BIDS_formatted'
+  LHS: '/home/ROBARTS/alik/graham/ext-bids/eplink_phase3/lhs/EpLinkPhase3_Baseline/bids'
+
+
+fs_dir:
+  TWH: '/home/ROBARTS/alik/graham/ext-bids/eplink_phase3/twh/EPL31_MRI_BIDS/BIDS_formatted/derivatives/fmriprep/freesurfer'
+  LHS: '/home/ROBARTS/alik/graham/ext-bids/eplink_phase3/lhs/EpLinkPhase3_Baseline/postproc3T_dev/freesurfer_7.1/results'
+
+subject_list:
+  TWH: 'config/subjects_twh.txt'
+  LHS: 'config/subjects_lhs.txt'
+
+fmriprep_dir:
+  TWH: '/home/ROBARTS/alik/graham/ext-bids/eplink_phase3/twh/EPL31_MRI_BIDS/BIDS_formatted/derivatives/fmriprep/fmriprep'
+  LHS: '/home/ROBARTS/alik/graham/ext-bids/eplink_phase3/lhs/EpLinkPhase3_Baseline/postproc3T_dev/fmriprep_20.2.1_withFS7.1'
+
+pybids_inputs:
+  preproc_bold:
+    filters:
+      suffix: 'bold'
+      desc: 'preproc'
+      extension: '.nii.gz'
+      scope: 'derivatives' #raw, derivatives (or can be pipeline name too!)
+      invalid_filters: 'allow'
+      task: 'rest' # to skip movie since has runs 1-3 right now
+    wildcards:
+      - subject
+      - session
+      - task
+      - space
+
+  preproc_mask:
+    filters:
+      suffix: 'mask'
+      desc: 'brain'
+      extension: '.nii.gz'
+      scope: 'derivatives' #raw, derivatives (or can be pipeline name too!)
+      datatype: 'func'
+      invalid_filters: 'allow'
+      task: 'rest' # to skip movie since has runs 1-3 right now
+    wildcards:
+      - subject
+      - session
+      - task
+      - space
+
+  confounds:
+    filters:
+      suffix: 'timeseries'
+      desc: 'confounds'
+      extension: '.tsv'
+      scope: 'derivatives' #raw, derivatives (or can be pipeline name too!)
+      invalid_filters: 'allow'
+      task: 'rest' # to skip movie since has runs 1-3 right now
+    wildcards:
+      - subject
+      - session
+      - task
+
+
+
+#relative to fmriprep_dir
+bold:
+  TWH: 'sub-{subject}/func/sub-{subject}_task-rest_space-MNI152NLin6Asym_desc-preproc_bold'
+  LHS: 'sub-{subject}/func/sub-{subject}_task-rest_run-1_space-MNI152NLin6Asym_desc-preproc_bold'
+
+confounds:
+  TWH: 'sub-{subject}/func/sub-{subject}_task-rest_desc-confounds_timeseries.tsv'
+  LHS: 'sub-{subject}/func/sub-{subject}_task-rest_run-1_desc-confounds_timeseries.tsv'
+
+
+confounds_to_use:
+  - 'csf'
+  - 'white_matter'
+  - 'rot_x'
+  - 'rot_y'
+  - 'rot_z'
+  - 'trans_x'
+  - 'trans_y'
+  - 'trans_z'
+
+
+denoise:
+  24HMP8PhysSpikeReg:
+    clean_img_opts:
+        standardize: True
+        detrend: True
+        low_pass: 0.08
+        high_pass: 0.01
+    confounds_name:
+      - csf 
+      - csf_derivative1 
+      - csf_derivative1_power2
+      - csf_power2 
+    confounds_like:
+      - white_matter
+      - trans
+      - rot
+      - motion_outlier
+
+    #unused below:
+
+aparc_parcels_csv: 'config/parcels.csv'
+aseg_labels_csv: 'config/aseg_labels.csv'
+
+aseg_groups:
+  mesialtemporal:
+    - 'Left-Hippocampus'
+    - 'Right-Hippocampus'
+    - 'Left-Amygdala'
+    - 'Right-Amygdala'
+    - 'TotalGrayVol'
+    - 'EstimatedTotalIntraCranialVol'
+  basalganglia:
+    - 'Left-Thalamus'
+    - 'Left-Caudate'
+    - 'Left-Putamen'
+    - 'Left-Pallidum'
+    - 'Left-Accumbens-area'
+    - 'Right-Thalamus'
+    - 'Right-Caudate'
+    - 'Right-Putamen'
+    - 'Right-Pallidum'
+    - 'Right-Accumbens-area'
+
+
+      
+
+hemis:
+ - lh
+ - rh
+
+measures:
+ - area
+ - thickness
+ - volume
+ - thicknessstd
+ - meancurv
+ - gauscurv
+ - foldind
+ - curvind
+
+
