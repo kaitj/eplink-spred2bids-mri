@@ -17,6 +17,7 @@ nbconvert = "^6.3.0"
 fmridenoise = "^0.2.1"
 snakebids = "^0.3.16"
 xnat = "^0.3.28"
+bids-validator = "^1.8.4"
 
 [tool.poetry.dev-dependencies]
 

@@ -20,9 +20,17 @@ rule get_subject_list:
     run:
         session = xnat.connect(config['spred_url'],user=os.environ['SPRED_USER'],password=os.environ['SPRED_PASS'])
         subjects = [row[0] for row in session.projects[params.site_id].subjects.tabulate(columns=['label'])]
+        subjects_with_mr = list()
+        for subject in subjects:
+            try:
+                exp = session.create_object(f'/data/projects/{params.site_id}/experiments/{subject}_01_SE01_MR')
+                subjects_with_mr.append(subject.split('_')[2]) #strip off all but numeric part of ID
+            except:
+                print(f'{subject} does not have mri')
+
         with open(output.subj_list, "w") as out:
-            for s in subjects:
-                out.write(s.split('_')[2]+'\n') #pull out EPL31_LHS_XXXX
+            for s in subjects_with_mr:
+                out.write(s+'\n') 
         session.disconnect()
 
 
@@ -47,8 +55,10 @@ rule make_dicom_tar:
         tar = 'raw/site-{site}/sub-{subject}/mri/sub-{subject}.tar'
     group: 'dl'
     shell:
+        'mkdir -p {params.temp_dir} && '
         'unzip -d {params.temp_dir} {input.zipfile} {params.file_match} && '
-        'tar -cvf {output.tar} {params.temp_dir}  && rm -rf {params.temp_dir}'
+        'tar -cvf {output.tar} {params.temp_dir} && '
+        'rm -rf {params.temp_dir}'
 
        
 rule tar_to_bids:
@@ -56,15 +66,19 @@ rule tar_to_bids:
         tar = 'raw/site-{site}/sub-{subject}/mri/sub-{subject}.tar',
         heuristic = lambda wildcards: config['tar2bids'][wildcards.site],
         container = '../resources/singularity/tar2bids.sif'
+
     params:
-        temp_bids_dir = 'raw/site-{site}/sub-{subject}/mri/temp_bids'
+        temp_bids_dir = 'raw/site-{site}/sub-{subject}/mri/temp_bids',
+        heudiconv_tmpdir = os.path.join(config['tmp_download'],'{site}','{subject}')
     output:
         dir = directory('bids/site-{site}/sub-{subject}')
     group: 'dl'
     shell: 
+        "mkdir -p {params.heudiconv_tmpdir} && "
         "singularity run -e {input.container} -o {params.temp_bids_dir} "
-        "  -h {input.heuristic} -N 1 -T 'sub-{{subject}}' {input.tar} || true && " #force clean exit for tar2bids
-        "mkdir -p {output.dir} && rsync -av {params.temp_bids_dir}/sub-{wildcards.subject}/ {output.dir}"
+        " -w {params.heudiconv_tmpdir} -h {input.heuristic} -N 1 -T 'sub-{{subject}}' {input.tar} || true && " #force clean exit for tar2bids
+        "mkdir -p {output.dir} && rsync -av {params.temp_bids_dir}/sub-{wildcards.subject}/ {output.dir} && "
+        "rm -rf {params.heudiconv_tmpdir}"
 
 
 rule make_root_bids_files:

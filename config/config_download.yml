@@ -10,9 +10,9 @@ tmp_download: '/localscratch'
 remote_path_mri: '/data/projects/EPL31_{site}/experiments/EPL31_{site}_{subject}_01_SE01_MR'
 
 tar2bids:
-  HSC: '../resources/heuristics/hsc_eplink.py'
-  LHS: '../resources/heuristics/cfmm_lhs_eplink.py'
-  TWH: '../resources/heuristics/twh_eplink.py'
+  HSC: 'resources/heuristics/hsc_eplink.py'
+  LHS: 'resources/heuristics/cfmm_lhs_eplink.py'
+  TWH: 'resources/heuristics/twh_eplink.py'
 
 containers:
   tar2bids: 'docker://khanlab/tar2bids:v0.0.6b'
