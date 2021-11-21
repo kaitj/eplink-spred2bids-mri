@@ -81,7 +81,7 @@ rule tar_to_bids:
         "rm -rf {params.heudiconv_tmpdir}"
 
 
-rule make_root_bids_files:
+rule create_dataset_json:
     input:
         dir = lambda wildcards: expand('bids/site-{site}/sub-{subject}',site=wildcards.site,subject=get_subjects(wildcards.site)),
         json = 'resources/dataset_description_template.json'

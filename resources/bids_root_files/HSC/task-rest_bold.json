@@ -35,6 +35,7 @@
   "PercentPhaseFOV": 100,
   "PercentSampling": 100,
   "PhaseEncodingAxis": "j",
+  "PhaseEncodingDirection": "j-",
   "PhaseEncodingSteps": 86,
   "PhilipsRescaleIntercept": 0,
   "PhilipsRescaleSlope": 1,
