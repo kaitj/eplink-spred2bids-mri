@@ -5,6 +5,13 @@ envvars:
     'SPRED_PASS'
 
 
+def get_subjects(site):
+    if os.path.exists(f'resources/subjects_{site}.txt'):
+        with open(f'resources/subjects_{site}.txt','r') as f:
+            return [s.replace('\n','') for s in f.readlines()]
+
+
+
 rule get_subject_list:
     params:
         site_id = 'EPL31_{site}'
@@ -58,3 +65,10 @@ rule tar_to_bids:
         "mkdir -p {output.dir} && rsync -av {params.temp_bids_dir}/sub-{wildcards.subject}/ {output.dir}"
 
 
+rule make_root_bids_files:
+    input:
+        dir = lambda wildcards: expand('bids/site-{site}/sub-{subject}',site=wildcards.site,subject=get_subjects(wildcards.site)),
+        json = 'resources/dataset_description_template.json'
+    output:
+        json = 'bids/site-{site}/dataset_description.json'
+    shell: 'cp {input.json} {output.json}'

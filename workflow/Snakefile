@@ -6,22 +6,13 @@ rule all_update_lists:
     input:
         expand('resources/subjects_{site}.txt',site=config['sites'])
 
+rule all_bids:
+    input:
+        expand('bids/site-{site}/dataset_description.json',site=config['sites'])
 
-def get_subjects(site):
-    if os.path.exists(f'resources/subjects_{site}.txt'):
-        with open(f'resources/subjects_{site}.txt','r') as f:
-            return f.readlines()
-    else:
-        'error!'
-
-
-for site in config['sites']:
-    rule:
-        name: f'all_bids_{site}'
-        input:
-            expand('bids/site-{site}/sub-{subject}',site=f'{site}',subject=get_subjects(site))
 
         
 
 include: 'rules/download.smk'
+#include: 'rules/preproc.smk'
 #include: 'rules/analyze.smk'
