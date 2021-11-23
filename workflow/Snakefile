@@ -14,5 +14,3 @@ rule all_bids:
         
 
 include: 'rules/download.smk'
-#include: 'rules/preproc.smk'
-#include: 'rules/analyze.smk'
