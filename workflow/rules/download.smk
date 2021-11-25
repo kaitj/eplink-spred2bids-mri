@@ -65,7 +65,7 @@ rule tar_to_bids:
     input:
         tar = 'raw/site-{site}/sub-{subject}/mri/sub-{subject}.tar',
         heuristic = lambda wildcards: config['tar2bids'][wildcards.site],
-        container = '../resources/singularity/tar2bids.sif'
+        container = 'resources/singularity/tar2bids.sif'
 
     params:
         temp_bids_dir = 'raw/site-{site}/sub-{subject}/mri/temp_bids',
@@ -88,3 +88,13 @@ rule create_dataset_json:
     output:
         json = 'bids/site-{site}/dataset_description.json'
     shell: 'cp {input.json} {output.json}'
+
+
+rule get_container:
+    """ generic rule for pulling container into resources, so it can be used""" 
+    """with singularity run instead of singularity exec"""
+    params:
+        uri = lambda wildcards: config['containers'][wildcards.container]
+    output: 'resources/singularity/{container}.sif'
+    shell: 'singularity pull {output} {params.uri}'
+ 

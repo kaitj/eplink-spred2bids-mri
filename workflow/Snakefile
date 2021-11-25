@@ -1,14 +1,13 @@
 configfile: 'config/config_download.yml'
-configfile: 'config/config_analyze.yml'
+
+rule all_bids:
+    input:
+        expand('bids/site-{site}/dataset_description.json',site=config['sites'])
 
 
 rule all_update_lists:
     input:
         expand('resources/subjects_{site}.txt',site=config['sites'])
-
-rule all_bids:
-    input:
-        expand('bids/site-{site}/dataset_description.json',site=config['sites'])
 
 
         
