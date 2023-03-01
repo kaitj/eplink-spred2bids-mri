@@ -1,19 +1,15 @@
 spred_url: 'https://spred.braincode.ca/spred/'
 sites:
   - LHS
-  - TWH
-  - HSC 
 
-project_id: EPL31
+project_id: EPL09
 
 tmp_download: '/localscratch'
 
 remote_path_mri: '/data/projects/{project_id}_{site}/experiments/{project_id}_{site}_{subject}_01_SE01_MR'
 
 tar2bids:
-  HSC: 'resources/heuristics/hsc_eplink.py'
-  LHS: 'resources/heuristics/cfmm_lhs_eplink.py'
-  TWH: 'resources/heuristics/twh_eplink.py'
+  LHS: 'resources/heuristics/cfmm_base.py'
 
 containers:
   tar2bids: 'docker://khanlab/tar2bids:v0.0.6b'
