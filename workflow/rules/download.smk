@@ -14,9 +14,10 @@ localrules: get_subject_list, download_mri_zip
 
 rule get_subject_list:
     params:
-        site_id = 'EPL31_{site}'
+        site_id = lambda wildcards: '{project_id}_{site}'.format(site=wildcards.site,project_id=config['project_id'])
     output:
         subj_list = 'resources/subjects_{site}.txt'
+    threads: 32 #to limit concurrency
     run:
         session = xnat.connect(config['spred_url'],user=os.environ['SPRED_USER'],password=os.environ['SPRED_PASS'])
         subjects = [row[0] for row in session.projects[params.site_id].subjects.tabulate(columns=['label'])]
@@ -36,9 +37,10 @@ rule get_subject_list:
 
 rule download_mri_zip:
     params:
-        remote_path = config['remote_path_mri']
+        remote_path = lambda wildcards: config['remote_path_mri'].format(project_id=config['project_id'],**wildcards)
     output:
         zipfile = 'raw/site-{site}/sub-{subject}/mri.zip'
+    threads: 32 #to limit concurrency
     run:
         session = xnat.connect(config['spred_url'],user=os.environ['SPRED_USER'],password=os.environ['SPRED_PASS'])
         experiment = session.create_object(params.remote_path)

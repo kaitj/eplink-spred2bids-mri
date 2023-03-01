@@ -2,12 +2,13 @@ spred_url: 'https://spred.braincode.ca/spred/'
 sites:
   - LHS
   - TWH
-  - HSC
+  - HSC 
 
+project_id: EPL31
 
 tmp_download: '/localscratch'
 
-remote_path_mri: '/data/projects/EPL31_{site}/experiments/EPL31_{site}_{subject}_01_SE01_MR'
+remote_path_mri: '/data/projects/{project_id}_{site}/experiments/{project_id}_{site}_{subject}_01_SE01_MR'
 
 tar2bids:
   HSC: 'resources/heuristics/hsc_eplink.py'
