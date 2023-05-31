@@ -1,51 +1,119 @@
 import xnat
+import pandas as pd
 
 envvars:
     'SPRED_USER',
     'SPRED_PASS'
 
+wildcard_constraints:
+    site='[a-zA-Z]{3}'
 
 def get_subjects(site):
     if os.path.exists(f'resources/subjects_{site}.txt'):
         with open(f'resources/subjects_{site}.txt','r') as f:
             return [s.replace('\n','') for s in f.readlines()]
 
-localrules: get_subject_list, download_mri_zip
+localrules: get_subjects_table, download_mri_zip
 
-rule get_subject_list:
-    params:
-        site_id = lambda wildcards: '{project_id}_{site}'.format(site=wildcards.site,project_id=config['project_id'])
+
+        
+
+# create table with scans for each subject
+
+# then have rules for each image type
+
+
+rule get_subjects_table:
     output:
-        subj_list = 'resources/subjects_{site}.txt'
-    threads: 32 #to limit concurrency
-    run:
-        session = xnat.connect(config['spred_url'],user=os.environ['SPRED_USER'],password=os.environ['SPRED_PASS'])
-        subjects = [row[0] for row in session.projects[params.site_id].subjects.tabulate(columns=['label'])]
-        subjects_with_mr = list()
-        for subject in subjects:
-            try:
-                exp = session.create_object(f'/data/projects/{params.site_id}/experiments/{subject}_01_SE01_MR')
-                subjects_with_mr.append(subject.split('_')[2]) #strip off all but numeric part of ID
-            except:
-                print(f'{subject} does not have mri')
+        tsv='resources/subjects.tsv'
+    script: 
+        '../scripts/get_subjects_table.py'
 
-        with open(output.subj_list, "w") as out:
-            for s in subjects_with_mr:
-                out.write(s+'\n') 
-        session.disconnect()
-
-
-rule download_mri_zip:
-    params:
-        remote_path = lambda wildcards: config['remote_path_mri'].format(project_id=config['project_id'],**wildcards)
+rule download_zip:
+    input:
+        tsv='resources/subjects.tsv'
     output:
-        zipfile = 'raw/site-{site}/sub-{subject}/mri.zip'
-    threads: 32 #to limit concurrency
-    run:
-        session = xnat.connect(config['spred_url'],user=os.environ['SPRED_USER'],password=os.environ['SPRED_PASS'])
-        experiment = session.create_object(params.remote_path)
-        experiment.download(output.zipfile)
-        session.disconnect()
+        zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_{suffix}.zip'
+    script:
+        '../scripts/download_zip.py'
+
+def get_zips():
+    df = pd.read_table('resources/subjects.tsv',dtype={'subject':str})
+    zips=[]
+    for site in config['sites']:
+        for session in config['session_lut'].keys():
+            for suffix in config['suffix_lut'].keys():
+                #get subjects:
+                subjects = df.query("site==@site and session==@session").subject.to_list()
+                zips.extend(expand('dicom_zips/site-{site}_subject-{subject}_ses-{session}_{suffix}.zip',site=site,session=session,subject=subjects, suffix=suffix))
+    return zips
+
+
+rule all_zips:
+    input:
+        zips_dir=get_zips()
+
+
+rule convert_t1:
+    input:
+        zip_file=directory('dicom_zips/site-{site}_subject-{subject}_ses-{session}_T1w.zip')
+    params:
+        tmpdir=lambda wildcards, resources: os.path.join(resources.tmpdir,'_'.join(wildcards),'T1w'),
+        outdir='bids/sub-{site}{subject}/ses-{session}/anat/'
+    output:
+        nii='bids/sub-{site}{subject}/ses-{session}/anat/sub-{site}{subject}_T1w.nii.gz',
+        json='bids/sub-{site}{subject}/ses-{session}/anat/sub-{site}{subject}_T1w.json'
+    shadow: 'minimal'
+    shell:
+        'mkdir -p {params.tmpdir} && '
+        'unzip -d {params.tmpdir} {input.zip_file} && '
+        'dcm2niix -d 9 -z y -f output {params.tmpdir} && '
+        'cp {params.tmpdir}/output.nii.gz {output.nii} && '
+        'cp {params.tmpdir}/output.json {output.json} && '
+        'rm -rf {params.tmpdir}'
+
+rule convert_dwi:
+    input:
+        zip_file=directory('dicom_zips/site-{site}_subject-{subject}_ses-{session}_{dwiacq}.zip')
+    params:
+        tmpdir=lambda wildcards, resources: os.path.join(resources.tmpdir,'_'.join(wildcards),'dwi'),
+        outdir='bids/sub-{site}{subject}/ses-{session}/dwi/'
+    output:
+        nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-{dwiacq}_dwi.nii.gz',
+        json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-{dwiacq}_dwi.json',
+        bval='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-{dwiacq}_dwi.bval',
+        bvec='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-{dwiacq}_dwi.bvec'
+    shadow: 'minimal'
+    shell:
+        'mkdir -p {params.tmpdir} && '
+        'unzip -d {params.tmpdir} {input.zip_file} && '
+        'dcm2niix -d 9 -z y -f output {params.tmpdir} && '
+        'cp {params.tmpdir}/output.nii.gz {output.nii} && '
+        'cp {params.tmpdir}/output.json {output.json} && '
+        'cp {params.tmpdir}/output.bvec {output.bvec} && '
+        'cp {params.tmpdir}/output.bval {output.bval} && '
+        'rm -rf {params.tmpdir}'
+
+
+
+rule convert_rest:
+    input:
+        zip_file=directory('dicom_zips/site-{site}_subject-{subject}_ses-{session}_rest.zip')
+    params:
+        tmpdir=lambda wildcards, resources: os.path.join(resources.tmpdir,'_'.join(wildcards),'rest'),
+        outdir='bids/sub-{site}{subject}/ses-{session}/func/'
+    output:
+        nii='bids/sub-{site}{subject}/ses-{session}/func/sub-{site}{subject}_task-rest_bold.nii.gz',
+        json='bids/sub-{site}{subject}/ses-{session}/func/sub-{site}{subject}_task-rest_bold.json'
+    shadow: 'minimal'
+    shell:
+        'mkdir -p {params.tmpdir} && '
+        'unzip -d {params.tmpdir} {input.zip_file} && '
+        'dcm2niix -d 9 -z y -f output {params.tmpdir} && '
+        'cp {params.tmpdir}/output.nii.gz {output.nii} && '
+        'cp {params.tmpdir}/output.json {output.json} && '
+        'rm -rf {params.tmpdir}'
+
 
 rule make_dicom_tar:
     input:
@@ -68,7 +136,6 @@ rule tar_to_bids:
         tar = 'raw/site-{site}/sub-{subject}/mri/sub-{subject}.tar',
         heuristic = lambda wildcards: config['tar2bids'][wildcards.site],
         container = 'resources/singularity/tar2bids.sif'
-
     params:
         temp_bids_dir = 'raw/site-{site}/sub-{subject}/mri/temp_bids',
         heudiconv_tmpdir = os.path.join(config['tmp_download'],'{site}','{subject}')
