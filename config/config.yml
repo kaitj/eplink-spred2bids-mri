@@ -1,26 +1,11 @@
 spred_url: 'https://spred.braincode.ca/spred/'
 sites:
   #  - LHS
-  #  - TWH
-  - HSC 
+  - TWH
+    #  - HSC 
 
-
-suffixes:
-  - T1w
 
 project_id: EPL31
-
-tmp_download: '/localscratch'
-
-remote_path_mri: '/data/projects/{project_id}_{site}/experiments/{project_id}_{site}_{subject}_02_SE01_MR'
-
-tar2bids:
-  HSC: 'resources/heuristics/hsc_eplink.py'
-  LHS: 'resources/heuristics/cfmm_lhs_eplink.py'
-  TWH: 'resources/heuristics/twh_eplink.py'
-
-containers:
-  tar2bids: 'docker://khanlab/tar2bids:v0.0.6b'
 
 
 session_lut:
@@ -42,14 +27,14 @@ suffix_lut:
     exclude:
       - PhysioLog
       - real
-  AP:
+  dwiAP:
     include:
       - 95dir_b2000_AP
       - DTI_64
     exclude:
       - FA
       - TENSOR
-  PA:
+  dwiPA:
     include:
       - PA
       - P-A

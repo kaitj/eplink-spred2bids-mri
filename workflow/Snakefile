@@ -1,16 +1,21 @@
-configfile: 'config/config_download.yml'
+configfile: 'config/config.yml'
+
+        
+include: 'rules/common.smk'
+include: 'rules/download.smk'
+
 
 rule all_bids:
     input:
-        expand('bids/site-{site}/dataset_description.json',site=config['sites'])
+        json = 'bids/dataset_description.json'
+    default_target: True
 
-
-rule all_update_lists:
+rule all_zips:
     input:
-        expand('resources/subjects_{site}.txt',site=config['sites'])
+        zips_dir=expand('dicom_zips/site-{site}_subject-{subject}_ses-{session}_{suffix}.zip',zip,**get_zip_lists('resources/subjects.tsv'))
+
+rule all_subjects_table:
+    input:
+        tsv='resources/subjects.tsv'
 
 
-        
-
-include: 'rules/download.smk'
-include: 'rules/singularity.smk'
