@@ -27,20 +27,39 @@ suffix_lut:
     exclude:
       - PhysioLog
       - real
-  dwiAP:
+  dwimultishellAP:
     include:
-      - 95dir_b2000_AP
+      - diff_mb3_95dir_b2000_AP
+    exclude:
+      - FA
+      - TENSOR
+  dwimultishellPA:
+    include:
+      - diff_mb3_b0_PA
+    exclude:
+      - FA
+      - TENSOR
+  dwisingleshellAP:
+    include:
       - DTI_64
     exclude:
       - FA
       - TENSOR
-  dwiPA:
+  dwisingleshellPA:
     include:
       - PA
       - P-A
+    exclude:
+      - diff_mb3
+      - FA
+      - TENSOR
+      - ADC
+      - TRACE
+  dwiPepolar:
+    include:
       - Pepolar
     exclude:
       - FA
       - TENSOR
       - ADC
-      - TRACE
+      - TRACE       
