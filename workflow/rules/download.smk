@@ -42,28 +42,48 @@ rule convert_t1:
         '../scripts/convert_dcm_to_bids.py'
 
 
-rule convert_dwi_multishell:
+rule convert_dwi_multishell_AP:
     input:
         zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_dwimultishell{dir}.zip'
     output:
-        nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-multishell_dir-{dir,AP|PA}_dwi.nii.gz',
-        json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-multishell_dir-{dir,AP|PA}_dwi.json',
-        bval='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-multishell_dir-{dir,AP|PA}_dwi.bval',
-        bvec='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-multishell_dir-{dir,AP|PA}_dwi.bvec'
+        nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-multishell_dir-{dir,AP}_dwi.nii.gz',
+        json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-multishell_dir-{dir,AP}_dwi.json',
+        bval='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-multishell_dir-{dir,AP}_dwi.bval',
+        bvec='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-multishell_dir-{dir,AP}_dwi.bvec'
+    script: 
+        '../scripts/convert_dcm_to_bids.py'
+
+rule convert_dwi_multishell_PA:
+    input:
+        zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_dwimultishell{dir}.zip'
+    output:
+        nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-multishell_dir-{dir,PA}_dwi.nii.gz',
+        json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-multishell_dir-{dir,PA}_dwi.json',
     script: 
         '../scripts/convert_dcm_to_bids.py'
 
 
-rule convert_dwi_singleshell:
+
+rule convert_dwi_singleshell_AP:
     input:
         zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_dwisingleshell{dir}.zip'
     output:
-        nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-singleshell_dir-{dir,AP|PA}_dwi.nii.gz',
-        json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-singleshell_dir-{dir,AP|PA}_dwi.json',
-        bval='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-singleshell_dir-{dir,AP|PA}_dwi.bval',
-        bvec='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-singleshell_dir-{dir,AP|PA}_dwi.bvec'
+        nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-singleshell_dir-{dir,AP}_dwi.nii.gz',
+        json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-singleshell_dir-{dir,AP}_dwi.json',
+        bval='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-singleshell_dir-{dir,AP}_dwi.bval',
+        bvec='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-singleshell_dir-{dir,AP}_dwi.bvec'
     script: 
         '../scripts/convert_dcm_to_bids.py'
+
+rule convert_dwi_singleshell_PA:
+    input:
+        zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_dwisingleshell{dir}.zip'
+    output:
+        nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-singleshell_dir-{dir,PA}_dwi.nii.gz',
+        json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_acq-singleshell_dir-{dir,PA}_dwi.json',
+    script: 
+        '../scripts/convert_dcm_to_bids.py'
+
 
 
 rule convert_dwi_pepolar:
