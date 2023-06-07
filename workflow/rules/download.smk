@@ -8,17 +8,12 @@ envvars:
 wildcard_constraints:
     site='[a-zA-Z]{3}'
 
-localrules: get_subjects_table, download_zip
+localrules:  download_zip
 
-      
-
-
-
-rule get_subjects_table:
-    output:
-        tsv='resources/subjects.tsv'
-    script: 
-        '../scripts/get_subjects_table.py'
+#this requires that the subject suffix zip list tables are created (all_zip_lists)
+zip_lists={}
+for suffix in config['suffix_lut'].keys():
+    zip_lists[suffix] = pd.read_table(f'resources/subjects_{suffix}.tsv',dtype={'subject':str}).to_dict(orient='list')
 
 rule download_zip:
     input:
@@ -37,6 +32,8 @@ rule convert_t1:
     output:
         nii='bids/sub-{site}{subject}/ses-{session}/anat/sub-{site}{subject}_ses-{session}_T1w.nii.gz',
         json='bids/sub-{site}{subject}/ses-{session}/anat/sub-{site}{subject}_ses-{session}_T1w.json'
+    log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_T1w.txt'
+    group: 'convert'
     script: 
         '../scripts/convert_dcm_to_bids.py'
 
@@ -49,6 +46,8 @@ rule convert_dwi_multishell_AP:
         json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-multishell_dir-{dir,AP}_dwi.json',
         bval='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-multishell_dir-{dir,AP}_dwi.bval',
         bvec='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-multishell_dir-{dir,AP}_dwi.bvec'
+    log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_dwimultishell{dir}.txt'
+    group: 'convert'
     script: 
         '../scripts/convert_dcm_to_bids.py'
 
@@ -58,6 +57,8 @@ rule convert_dwi_multishell_PA:
     output:
         nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-multishell_dir-{dir,PA}_dwi.nii.gz',
         json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-multishell_dir-{dir,PA}_dwi.json',
+    log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_dwimultishell{dir}.txt'
+    group: 'convert'
     script: 
         '../scripts/convert_dcm_to_bids.py'
 
@@ -71,6 +72,8 @@ rule convert_dwi_singleshell_AP:
         json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-{dir,AP}_dwi.json',
         bval='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-{dir,AP}_dwi.bval',
         bvec='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-{dir,AP}_dwi.bvec'
+    log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_dwisingleshell{dir}.txt'
+    group: 'convert'
     script: 
         '../scripts/convert_dcm_to_bids.py'
 
@@ -80,6 +83,8 @@ rule convert_dwi_singleshell_PA:
     output:
         nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-{dir,PA}_dwi.nii.gz',
         json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-{dir,PA}_dwi.json',
+    log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_dwisingleshell{dir}.txt'
+    group: 'convert'
     script: 
         '../scripts/convert_dcm_to_bids.py'
 
@@ -91,6 +96,8 @@ rule convert_dwi_pepolar:
     output:
         nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-pepolar_dir-PA_dwi.nii.gz',
         json='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-pepolar_dir-PA_dwi.json',
+    log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_dwiPepolar.txt'
+    group: 'convert'
     script: 
         '../scripts/convert_dcm_to_bids.py'
 
@@ -101,18 +108,30 @@ rule convert_rest:
     output:
         nii='bids/sub-{site}{subject}/ses-{session}/func/sub-{site}{subject}_ses-{session}_task-rest_bold.nii.gz',
         json='bids/sub-{site}{subject}/ses-{session}/func/sub-{site}{subject}_ses-{session}_task-rest_bold.json'
+    log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_rest.txt'
+    group: 'convert'
     script: 
         '../scripts/convert_dcm_to_bids.py'
 
+rule create_bval_bvec_pepolar:
+    input:
+        nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-{acq}_dir-PA_dwi.nii.gz',
+    output:
+        bvec='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-{acq}_dir-PA_dwi.bvec',
+        bval='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-{acq}_dir-PA_dwi.bval',
+    group: 'convert'
+    script: '../scripts/create_bval_bvec_pepolar.py'
+  
+
 rule create_dataset_json:
     input:
-        t1=expand('bids/sub-{site}{subject}/ses-{session}/anat/sub-{site}{subject}_ses-{session}_T1w.nii.gz',zip,**get_zip_lists_bysuffix('resources/subjects.tsv',suffix='T1w')),
-        rest=expand('bids/sub-{site}{subject}/ses-{session}/func/sub-{site}{subject}_ses-{session}_task-rest_bold.nii.gz',zip,**get_zip_lists_bysuffix('resources/subjects.tsv',suffix='rest')),
-        dwi_multishell_ap=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-multishell_dir-AP_dwi.nii.gz',zip,**get_zip_lists_bysuffix('resources/subjects.tsv',suffix='dwimultishellAP')),
-        dwi_multishell_pa=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-multishell_dir-PA_dwi.nii.gz',zip,**get_zip_lists_bysuffix('resources/subjects.tsv',suffix='dwimultishellPA')),
-        dwi_singleshell_ap=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-AP_dwi.nii.gz',zip,**get_zip_lists_bysuffix('resources/subjects.tsv',suffix='dwisingleshellAP')),
-        dwi_singleshell_pa=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-PA_dwi.nii.gz',zip,**get_zip_lists_bysuffix('resources/subjects.tsv',suffix='dwisingleshellPA')),
-        dwi_pepolar=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-pepolar_dir-PA_dwi.nii.gz',zip,**get_zip_lists_bysuffix('resources/subjects.tsv',suffix='dwiPepolar')),
+        t1=expand('bids/sub-{site}{subject}/ses-{session}/anat/sub-{site}{subject}_ses-{session}_T1w.nii.gz',zip,**zip_lists['T1w']),
+        rest=expand('bids/sub-{site}{subject}/ses-{session}/func/sub-{site}{subject}_ses-{session}_task-rest_bold.nii.gz',zip,**zip_lists['rest']),
+        dwi_multishell_ap=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-multishell_dir-AP_dwi.bvec',zip,**zip_lists['dwimultishellAP']),
+        dwi_multishell_pa=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-multishell_dir-PA_dwi.bvec',zip,**zip_lists['dwimultishellPA']),
+        dwi_singleshell_ap=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-AP_dwi.bvec',zip,**zip_lists['dwisingleshellAP']),
+        dwi_singleshell_pa=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-PA_dwi.bvec',zip,**zip_lists['dwisingleshellPA']),
+        dwi_pepolar=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-pepolar_dir-PA_dwi.bvec',zip,**zip_lists['dwiPepolar']),
         json = 'resources/dataset_description_template.json'
     output:
         json = 'bids/dataset_description.json'

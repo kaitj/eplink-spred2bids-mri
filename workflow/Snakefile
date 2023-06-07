@@ -1,21 +1,23 @@
 configfile: 'config/config.yml'
 
-        
 include: 'rules/common.smk'
-include: 'rules/download.smk'
+
+if config['init_lists'] == True:
+    rule all_zip_lists:
+        input:
+            expand('resources/subjects_{suffix}.tsv',suffix=config['suffix_lut'].keys())
 
 
-rule all_bids:
-    input:
-        json = 'bids/dataset_description.json'
-    default_target: True
+    include: 'rules/init_lists.smk'
+else:
+    rule all_bids:
+        input:
+            json = 'bids/dataset_description.json'
+        default_target: True
 
-rule all_zips:
-    input:
-        zips_dir=expand('dicom_zips/site-{site}_subject-{subject}_ses-{session}_{suffix}.zip',zip,**get_zip_lists('resources/subjects.tsv'))
 
-rule all_subjects_table:
-    input:
-        tsv='resources/subjects.tsv'
+    include: 'rules/download.smk'
+    
+
 
 

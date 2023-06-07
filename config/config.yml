@@ -1,9 +1,10 @@
 spred_url: 'https://spred.braincode.ca/spred/'
 sites:
-  #  - LHS
+  - LHS
   - TWH
-    #  - HSC 
+  - HSC 
 
+init_lists: False #set this to True to grab new subject lists from XNAT
 
 project_id: EPL31
 
@@ -17,6 +18,7 @@ suffix_lut:
   T1w:
     include:
       - T1
+      - SPGR
     exclude:
       - T1 flair 
   rest:
