@@ -16,12 +16,14 @@ session_lut:
 
 suffix_lut:
   T1w:
+    query: series_description.str.contains("T1",case=False) or series_description.str.contains("SPGR") and ~series_description.str.contains("flair")
     include:
       - T1
       - SPGR
     exclude:
       - T1 flair 
   rest:
+    query: series_description.str.contains("rest",case=False) or series_description.str.contains("RS_fMRI")
     include:
       - rest
       - Rest
@@ -65,3 +67,14 @@ suffix_lut:
       - TENSOR
       - ADC
       - TRACE       
+  fieldmapphasediff:
+    include:
+      - gre_field_mapping
+    exclude: []
+
+  fieldmaptwophase:
+    include:
+      - GRE_FieldMap
+    exclude: []
+
+

@@ -113,6 +113,18 @@ rule convert_rest:
     script: 
         '../scripts/convert_dcm_to_bids.py'
 
+rule convert_phdiff_fmap:
+    input:
+        zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_fieldmapphasediff.zip'
+    output:
+        nii='bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_magnitude1.nii.gz',
+        json='bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_magnitude1.json',
+    log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_fieldmapphasediff.txt'
+    group: 'convert'
+    script: 
+        '../scripts/convert_dcm_to_bids.py'
+
+
 rule create_bval_bvec_pepolar:
     input:
         nii='bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-{acq}_dir-PA_dwi.nii.gz',
