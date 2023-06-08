@@ -1,5 +1,2 @@
-site	subject	session
-TWH	0002	baseline
-TWH	0067	baseline
-TWH	0068	baseline
-TWH	0072	baseline
+site	subject	session	series_description	scan_uri	image_type_0	image_type_1	image_type_2	image_type_3	image_type_4	image_type_5	image_type_6	image_type_7
+TWH	0068	baseline	ep2d_diff_mddw_6_p2_s3 P-A	/data/archive/projects/EPL31_TWH/subjects/spred_S08067/experiments/spred_E38672/scans/22	ORIGINAL	PRIMARY	DIFFUSION	NONE				

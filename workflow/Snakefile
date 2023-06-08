@@ -1,6 +1,5 @@
 configfile: 'config/config.yml'
 
-include: 'rules/common.smk'
 
 if config['init_lists'] == True:
     rule all_zip_lists:

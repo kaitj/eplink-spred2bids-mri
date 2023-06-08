@@ -5,7 +5,7 @@ import os
 xnat_connection = xnat.connect(snakemake.config['spred_url'],user=os.environ['SPRED_USER'],password=os.environ['SPRED_PASS'])
 project_id = snakemake.config['project_id']
 
-df = pd.DataFrame(columns=['site','subject','session','scan_name','scan_uri'])
+df = pd.DataFrame(columns=['site','subject','session','series_description','scan_uri'])
 
 for session in snakemake.config['session_lut'].keys():
 

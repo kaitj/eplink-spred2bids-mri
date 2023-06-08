@@ -1,11 +1,11 @@
-site	subject	session
-TWH	0068	followup
-TWH	0077	baseline
-TWH	0078	baseline
-TWH	0080	baseline
-TWH	0081	baseline
-TWH	0082	baseline
-TWH	0083	baseline
-TWH	0084	baseline
-TWH	0085	baseline
-TWH	0086	baseline
+site	subject	session	series_description	scan_uri	image_type_0	image_type_1	image_type_2	image_type_3	image_type_4	image_type_5	image_type_6	image_type_7
+TWH	0068	followup	DTI Pepolar	/data/archive/projects/EPL31_TWH/subjects/spred_S08067/experiments/spred_E40483/scans/16001	ORIGINAL	PRIMARY	DIFFUSION	NONE	ND	NORM	MFSPLIT	
+TWH	0077	baseline	DTI Pepolar	/data/archive/projects/EPL31_TWH/subjects/spred_S08235/experiments/spred_E38677/scans/30	ORIGINAL	PRIMARY	DIFFUSION	NONE				
+TWH	0078	baseline	DTI Pepolar	/data/archive/projects/EPL31_TWH/subjects/spred_S08285/experiments/spred_E40373/scans/18001	ORIGINAL	PRIMARY	DIFFUSION	NONE	ND	NORM	MFSPLIT	
+TWH	0080	baseline	DTI Pepolar	/data/archive/projects/EPL31_TWH/subjects/spred_S08287/experiments/spred_E40315/scans/21001	ORIGINAL	PRIMARY	DIFFUSION	NONE	ND	NORM	MFSPLIT	
+TWH	0081	baseline	DTI Pepolar	/data/archive/projects/EPL31_TWH/subjects/spred_S08322/experiments/spred_E40320/scans/15001	ORIGINAL	PRIMARY	DIFFUSION	NONE	ND	NORM	MFSPLIT	
+TWH	0082	baseline	DTI Pepolar	/data/archive/projects/EPL31_TWH/subjects/spred_S08288/experiments/spred_E40323/scans/17001	ORIGINAL	PRIMARY	DIFFUSION	NONE	ND	NORM	MFSPLIT	
+TWH	0083	baseline	DTI Pepolar	/data/archive/projects/EPL31_TWH/subjects/spred_S08289/experiments/spred_E40364/scans/17	ORIGINAL	PRIMARY	DIFFUSION	NONE	ND	NORM	MFSPLIT	
+TWH	0084	baseline	DTI Pepolar	/data/archive/projects/EPL31_TWH/subjects/spred_S08286/experiments/spred_E40330/scans/17001	ORIGINAL	PRIMARY	DIFFUSION	NONE	ND	NORM	MFSPLIT	
+TWH	0085	baseline	DTI Pepolar	/data/archive/projects/EPL31_TWH/subjects/spred_S08305/experiments/spred_E40339/scans/16001	ORIGINAL	PRIMARY	DIFFUSION	NONE	ND	NORM	MFSPLIT	
+TWH	0086	baseline	DTI Pepolar	/data/archive/projects/EPL31_TWH/subjects/spred_S08304/experiments/spred_E40394/scans/18001	ORIGINAL	PRIMARY	DIFFUSION	NONE	ND	NORM	MFSPLIT	
