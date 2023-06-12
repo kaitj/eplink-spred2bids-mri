@@ -1,0 +1,85 @@
+site	subject	session	series_description	scan_uri	image_type_0	image_type_1	image_type_2	image_type_3	image_type_4	image_type_5	image_type_6	image_type_7
+LHS	0001	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07295/experiments/spred_E33978/scans/15	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0003	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07302/experiments/spred_E33980/scans/21	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0004	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07303/experiments/spred_E33982/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0005	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07304/experiments/spred_E33996/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0005	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07304/experiments/spred_E33996/scans/19	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0007	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07306/experiments/spred_E33998/scans/16	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0007	followup	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07306/experiments/spred_E36909/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0008	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07309/experiments/spred_E34001/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0008	followup	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07309/experiments/spred_E35787/scans/18	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0008	followup	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07309/experiments/spred_E35787/scans/20	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0009	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07310/experiments/spred_E34056/scans/25	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0009	followup	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07310/experiments/spred_E38385/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0011	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07385/experiments/spred_E33803/scans/21	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0012	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07328/experiments/spred_E34089/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0013	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07364/experiments/spred_E34275/scans/21	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0014	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07329/experiments/spred_E34093/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0015	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07363/experiments/spred_E34270/scans/21	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0015	followup	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07363/experiments/spred_E38956/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0016	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07388/experiments/spred_E33851/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0018	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07653/experiments/spred_E36911/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0019	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07654/experiments/spred_E36074/scans/18	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0019	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07654/experiments/spred_E36074/scans/22	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0020	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07655/experiments/spred_E35150/scans/16	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0020	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07655/experiments/spred_E35150/scans/18	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0021	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07671/experiments/spred_E36089/scans/18	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0022	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07670/experiments/spred_E36097/scans/22	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0022	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07670/experiments/spred_E36097/scans/24	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0031	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S07949/experiments/spred_E37888/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0034	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08134/experiments/spred_E36927/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0035	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08190/experiments/spred_E38480/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0036	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08278/experiments/spred_E38959/scans/24	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0038	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08245/experiments/spred_E38773/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0039	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08253/experiments/spred_E38991/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0041	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08364/experiments/spred_E40342/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0041	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08364/experiments/spred_E40342/scans/18	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	0042	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08336/experiments/spred_E39880/scans/37	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5201	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08189/experiments/spred_E38424/scans/16	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5201	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08189/experiments/spred_E38424/scans/19	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5202	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08194/experiments/spred_E38428/scans/15	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5203	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08195/experiments/spred_E38430/scans/19	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5204	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08196/experiments/spred_E38420/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5205	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08197/experiments/spred_E38422/scans/19	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5206	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08239/experiments/spred_E38698/scans/18	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5207	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08274/experiments/spred_E38933/scans/37	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5208	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08315/experiments/spred_E39495/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5209	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08380/experiments/spred_E40424/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5211	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08382/experiments/spred_E40442/scans/9	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5211	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08382/experiments/spred_E40442/scans/12	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5213	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08405/experiments/spred_E40801/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5214	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08413/experiments/spred_E40799/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+LHS	5215	baseline	ep_bold_mb4_p2_2.5iso_Movie	/data/archive/projects/EPL31_LHS/subjects/spred_S08406/experiments/spred_E40778/scans/17	ORIGINAL	PRIMARY	M	MB	ND	NORM	MOSAIC	
+TWH	0001	followup	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S08076/experiments/spred_E37600/scans/10	ORIGINAL	PRIMARY	OTHER					
+TWH	0005	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07656/experiments/spred_E34909/scans/16	ORIGINAL	PRIMARY	OTHER					
+TWH	0006	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07614/experiments/spred_E35100/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0007	followup	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07638/experiments/spred_E37647/scans/10	ORIGINAL	PRIMARY	OTHER					
+TWH	0008	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07657/experiments/spred_E34961/scans/5	ORIGINAL	PRIMARY	OTHER					
+TWH	0012	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07660/experiments/spred_E35038/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0013	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07686/experiments/spred_E35981/scans/13	ORIGINAL	PRIMARY	OTHER					
+TWH	0020	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07685/experiments/spred_E35979/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0021	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07389/experiments/spred_E40242/scans/12	ORIGINAL	PRIMARY	OTHER					
+TWH	0022	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07407/experiments/spred_E35998/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0027	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07666/experiments/spred_E35205/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0048	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07539/experiments/spred_E35969/scans/17	ORIGINAL	PRIMARY	OTHER					
+TWH	0050	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07552/experiments/spred_E37788/scans/16	ORIGINAL	PRIMARY	OTHER					
+TWH	0051	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07549/experiments/spred_E36020/scans/16	ORIGINAL	PRIMARY	OTHER					
+TWH	0054	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S08138/experiments/spred_E37782/scans/17	ORIGINAL	PRIMARY	OTHER					
+TWH	0056	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07582/experiments/spred_E35977/scans/11	ORIGINAL	PRIMARY	OTHER					
+TWH	0057	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07695/experiments/spred_E37752/scans/11	ORIGINAL	PRIMARY	OTHER					
+TWH	0058	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07682/experiments/spred_E37720/scans/17	ORIGINAL	PRIMARY	OTHER					
+TWH	0059	baseline	GRE-EPI movie  240	/data/archive/projects/EPL31_TWH/subjects/spred_S07696/experiments/spred_E37706/scans/9	ORIGINAL	PRIMARY	OTHER					
+TWH	0067	baseline	ep2d_bold_s4_p2_2.5 iso movie siemens	/data/archive/projects/EPL31_TWH/subjects/spred_S08066/experiments/spred_E38670/scans/29	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0068	baseline	ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08067/experiments/spred_E38672/scans/31	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0068	baseline	ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08067/experiments/spred_E38672/scans/33	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0068	followup	Cor ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08067/experiments/spred_E40483/scans/19	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0075	baseline	ep2d_bold_s4_p2_2.5 iso movie siemens	/data/archive/projects/EPL31_TWH/subjects/spred_S08234/experiments/spred_E38674/scans/28	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0076	baseline	Cor ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08284/experiments/spred_E40311/scans/20	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0077	baseline	ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08235/experiments/spred_E38677/scans/31	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0078	baseline	Cor ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08285/experiments/spred_E40373/scans/22	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0080	baseline	Cor ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08287/experiments/spred_E40315/scans/24	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0081	baseline	Cor ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08322/experiments/spred_E40320/scans/17	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0082	baseline	Cor ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08288/experiments/spred_E40323/scans/18	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0084	baseline	Cor ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08286/experiments/spred_E40330/scans/21	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0085	baseline	Cor ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08305/experiments/spred_E40339/scans/19	ORIGINAL	PRIMARY	FMRI	NONE				
+TWH	0086	baseline	Cor ep2d_bold_s4_p2_2.5 iso movie	/data/archive/projects/EPL31_TWH/subjects/spred_S08304/experiments/spred_E40394/scans/22	ORIGINAL	PRIMARY	FMRI	NONE				

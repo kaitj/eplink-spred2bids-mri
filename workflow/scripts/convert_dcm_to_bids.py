@@ -21,7 +21,10 @@ with tempfile.TemporaryDirectory() as tmp_dir:
     shell('unzip -d {tmp_dir} {snakemake.input.zip_file}')
 
     #run dcm2niix, outputting to the tmp_dir root:
-    shell('./deps/dcm2niix -d 9 -z y -f output {tmp_dir} 2> {snakemake.log} ')
+    shell('./deps/dcm2niix -d 9 -z y -f output {tmp_dir} &> {snakemake.log} ')
+
+    #remove the log if we reach this point (ie if the shell command was successful
+    shell('rm -f {snakemake.log}')
 
     #this nominally creates an output.nii.gz file (along with .json), 
     # but dcm2niix may add an unknown suffix to the output file too, so we need to 

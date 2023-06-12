@@ -10,10 +10,15 @@ wildcard_constraints:
 
 localrules:  download_zip
 
+
+
+
+
 #this requires that the subject suffix zip list tables are created (all_zip_lists)
 zip_lists={}
 for suffix in config['suffix_lut'].keys():
-    zip_lists[suffix] = pd.read_table(f'resources/subjects_{suffix}.tsv',dtype={'subject':str})[['subject','session','site']].to_dict(orient='list')
+    zip_lists[suffix] = pd.read_table(f'resources/nofailed_subjects_{suffix}.tsv',dtype={'subject':str})[['subject','session','site']].to_dict(orient='list')
+
 
 rule download_zip:
     input:
@@ -143,8 +148,8 @@ rule convert_fmapPhaseDiff:
     input:
         zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_fmapPhaseDiff.zip'
     output:
-        nii='bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_phasediff.nii.gz',
-        json='bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_phasediff.json',
+        nii='bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_phasediff.nii.gz',
+        json='bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_phasediff.json',
     log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_fmapPhaseDiff.txt'
     group: 'convert'
     script: 
@@ -191,7 +196,7 @@ rule create_dataset_json:
         dwi_singleshell_pa=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-PA_dwi.bvec',zip,**zip_lists['dwisingleshellPA']),
         dwi_pepolar=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-pepolar_dir-PA_dwi.bvec',zip,**zip_lists['dwiPepolar']),
         fmap_magimages=expand('bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_magnitude1.nii.gz',zip,**zip_lists['fmapMagImages']),
-        fmap_phdiff=expand('bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_phasediff.nii.gz',zip,**zip_lists['fmapPhaseDiff']),
+        fmap_phdiff=expand('bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_phasediff.nii.gz',zip,**zip_lists['fmapPhaseDiff']),
         fmap_twophase=expand('bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-twophase_magnitude1.nii.gz',zip,**zip_lists['fmapTwoPhase']),
         json = 'resources/dataset_description_template.json'
     output:

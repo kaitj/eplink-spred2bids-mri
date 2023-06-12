@@ -26,7 +26,7 @@ suffix_lut:
   dwimultishellPA:
     query: series_description.str.contains("diff_mb3_b0_PA") and image_type_0 == 'ORIGINAL'
   dwisingleshellAP:
-    query: series_description.str.contains("DTI_64") or series_description == 'ep2d_diff_mddw_64_p2_s3 A-P' and image_type_0 == 'ORIGINAL'
+    query: series_description.str.contains("DTI_64") or series_description == 'ep2d_diff_mddw_64_p2_s3 A-P' or series_description == 'DTI_32' and image_type_0 == 'ORIGINAL'
   dwisingleshellPA:
     query: series_description == 'ep2d_diff_mddw_6_p2_s3 P-A' and image_type_0 == 'ORIGINAL'
   dwiPepolar:

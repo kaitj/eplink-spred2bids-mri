@@ -1,0 +1,4 @@
+Error: Missing images. Found 36 images, expected 39 slices per volume and instance number (0020,0013) ranges from 1 to 77
+Error: Missing images. Found 35 images, expected 39 slices per volume and instance number (0020,0013) ranges from 79 to 155
+Error: Missing images. Found 36 images, expected 39 slices per volume and instance number (0020,0013) ranges from 80 to 156
+Error: Missing images. Found 37 images, expected 39 slices per volume and instance number (0020,0013) ranges from 2 to 78
