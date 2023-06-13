@@ -11,7 +11,7 @@ if config['init_lists'] == True:
 else:
     rule all_bids:
         input:
-            json = 'bids/dataset_description.json'
+            jsons = expand('bids_{session}/dataset_description.json',session=config['session_lut'].keys())
         default_target: True
 
 
