@@ -134,11 +134,11 @@ rule convert_fmapMagImages:
     input:
         zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_fmapMagImages.zip'
     output:
-        nii=['bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_magnitude1.nii.gz',
-                'bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_magnitude2.nii.gz'],
-        json=['bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_magnitude1.json',
-                'bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_magnitude2.json']
-    log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_fmapMagImages.txt'
+        nii=['bids/sub-{site,LHS|TWH}{subject}/ses-{session}/fmap/sub-{site,LHS|TWH}{subject}_ses-{session}_magnitude1.nii.gz',
+                'bids/sub-{site,LHS|TWH}{subject}/ses-{session}/fmap/sub-{site,LHS|TWH}{subject}_ses-{session}_magnitude2.nii.gz'],
+        json=['bids/sub-{site,LHS|TWH}{subject}/ses-{session}/fmap/sub-{site,LHS|TWH}{subject}_ses-{session}_magnitude1.json',
+                'bids/sub-{site,LHS|TWH}{subject}/ses-{session}/fmap/sub-{site,LHS|TWH}{subject}_ses-{session}_magnitude2.json']
+    log: 'logs/convert_dcm_to_bids/sub-{site,LHS|TWH}{subject}_ses-{session}_fmapMagImages.txt'
     group: 'convert'
     script: 
         '../scripts/convert_dcm_to_bids.py'
@@ -148,8 +148,8 @@ rule convert_fmapPhaseDiff:
     input:
         zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_fmapPhaseDiff.zip'
     output:
-        nii='bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_phasediff.nii.gz',
-        json='bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_phasediff.json',
+        nii='bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_phasediff.nii.gz',
+        json='bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_phasediff.json',
     log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_fmapPhaseDiff.txt'
     group: 'convert'
     script: 
@@ -160,15 +160,15 @@ rule convert_fmapTwoPhase:
     input:
         zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_fmapTwoPhase.zip'
     output:
-        nii=['bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-twophase_magnitude1.nii.gz',
-                'bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-twophase_phase1.nii.gz',
-                'bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-twophase_magnitude2.nii.gz',
-                'bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-twophase_phase2.nii.gz'],
-        json=['bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-twophase_magnitude1.json',
-                'bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-twophase_phase1.json',
-                'bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-twophase_magnitude2.json',
-                'bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-twophase_phase2.json']
-    log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_fmapTwoPhase.txt'
+        nii=['bids/sub-{site,HSC}{subject}/ses-{session}/fmap/sub-{site,HSC}{subject}_ses-{session}_magnitude1.nii.gz',
+                'bids/sub-{site,HSC}{subject}/ses-{session}/fmap/sub-{site,HSC}{subject}_ses-{session}_phase1.nii.gz',
+                'bids/sub-{site,HSC}{subject}/ses-{session}/fmap/sub-{site,HSC}{subject}_ses-{session}_magnitude2.nii.gz',
+                'bids/sub-{site,HSC}{subject}/ses-{session}/fmap/sub-{site,HSC}{subject}_ses-{session}_phase2.nii.gz'],
+        json=['bids/sub-{site,HSC}{subject}/ses-{session}/fmap/sub-{site,HSC}{subject}_ses-{session}_magnitude1.json',
+                'bids/sub-{site,HSC}{subject}/ses-{session}/fmap/sub-{site,HSC}{subject}_ses-{session}_phase1.json',
+                'bids/sub-{site,HSC}{subject}/ses-{session}/fmap/sub-{site,HSC}{subject}_ses-{session}_magnitude2.json',
+                'bids/sub-{site,HSC}{subject}/ses-{session}/fmap/sub-{site,HSC}{subject}_ses-{session}_phase2.json']
+    log: 'logs/convert_dcm_to_bids/sub-{site,HSC}{subject}_ses-{session}_fmapTwoPhase.txt'
     group: 'convert'
     script: 
         '../scripts/convert_dcm_to_bids.py'
@@ -195,9 +195,9 @@ rule create_dataset_json:
         dwi_singleshell_ap=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-AP_dwi.bvec',zip,**zip_lists['dwisingleshellAP']),
         dwi_singleshell_pa=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-singleshell_dir-PA_dwi.bvec',zip,**zip_lists['dwisingleshellPA']),
         dwi_pepolar=expand('bids/sub-{site}{subject}/ses-{session}/dwi/sub-{site}{subject}_ses-{session}_acq-pepolar_dir-PA_dwi.bvec',zip,**zip_lists['dwiPepolar']),
-        fmap_magimages=expand('bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_magnitude1.nii.gz',zip,**zip_lists['fmapMagImages']),
-        fmap_phdiff=expand('bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-phdiff_phasediff.nii.gz',zip,**zip_lists['fmapPhaseDiff']),
-        fmap_twophase=expand('bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_acq-twophase_magnitude1.nii.gz',zip,**zip_lists['fmapTwoPhase']),
+        fmap_magimages=expand('bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_magnitude1.nii.gz',zip,**zip_lists['fmapMagImages']),
+        fmap_phdiff=expand('bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_phasediff.nii.gz',zip,**zip_lists['fmapPhaseDiff']),
+        fmap_twophase=expand('bids/sub-{site}{subject}/ses-{session}/fmap/sub-{site}{subject}_ses-{session}_magnitude1.nii.gz',zip,**zip_lists['fmapTwoPhase']),
         json = 'resources/dataset_description_template.json'
     output:
         json = 'bids/dataset_description.json'
