@@ -31,13 +31,30 @@ rule download_zip:
     script:
         '../scripts/download_zip.py'
 
+
+for suffix in config['suffix_lut']:
+    rule:
+        name: f'convert_dcm_to_bids_{suffix}'
+        input:
+            zip_file=f'dicom_zips/site-{{site}}_subject-{{subject}}_ses-{{session}}_{suffix}.zip'
+        output:
+            **config['suffix_lut'][suffix]['outputs']
+        log: f'logs/convert_dcm_to_bids/sub-{{site}}{{subject}}_ses-{{session}}_{suffix}.txt'
+        group: 'convert'
+        script: 
+            '../scripts/convert_dcm_to_bids.py'
+
+
+
+"""
+
 rule convert_t1:
     input:
         zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_T1w.zip'
     output:
         nii='bids_{session}/sub-{site}{subject}/anat/sub-{site}{subject}_T1w.nii.gz',
         json='bids_{session}/sub-{site}{subject}/anat/sub-{site}{subject}_T1w.json'
-    log: 'logs_{session}/convert_dcm_to_bids/sub-{site}{subject}_T1w.txt'
+    log: 'logs/convert_dcm_to_bids/sub-{site}{subject}_ses-{session}_T1w.txt'
     group: 'convert'
     script: 
         '../scripts/convert_dcm_to_bids.py'
@@ -173,7 +190,7 @@ rule convert_fmapTwoPhase:
     script: 
         '../scripts/convert_dcm_to_bids.py'
 
-
+"""
 
 rule create_bval_bvec_pepolar:
     input:
@@ -184,10 +201,7 @@ rule create_bval_bvec_pepolar:
     group: 'convert'
     script: '../scripts/create_bval_bvec_pepolar.py'
   
-
-rule create_dataset_json:
-    input:
-        t1=expand('bids_{session}/sub-{site}{subject}/anat/sub-{site}{subject}_T1w.nii.gz',zip,**zip_lists['T1w']),
+"""
         rest=expand('bids_{session}/sub-{site}{subject}/func/sub-{site}{subject}_task-rest_bold.nii.gz',zip,**zip_lists['rest']),
         movie=expand('bids_{session}/sub-{site}{subject}/func/sub-{site}{subject}_task-movie_bold.nii.gz',zip,**zip_lists['movie']),
         dwi_multishell_ap=expand('bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-multishell_dir-AP_dwi.bvec',zip,**zip_lists['dwimultishellAP']),
@@ -198,10 +212,16 @@ rule create_dataset_json:
         fmap_magimages=expand('bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_magnitude1.nii.gz',zip,**zip_lists['fmapMagImages']),
         fmap_phdiff=expand('bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_phasediff.nii.gz',zip,**zip_lists['fmapPhaseDiff']),
         fmap_twophase=expand('bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_magnitude1.nii.gz',zip,**zip_lists['fmapTwoPhase']),
+"""
+rule create_dataset_json:
+    input:
+        t1=expand('bids_{session}/sub-{site}{subject}/anat/sub-{site}{subject}_T1w.nii.gz',zip,**zip_lists['T1w']),
+
         dd_json = 'resources/dataset_description_template.json',
         bidsignore = 'resources/bids_root_files/bidsignore',
         rest_json = 'resources/bids_root_files/task-rest_bold.json',
         movie_json = 'resources/bids_root_files/task-movie_bold.json',
+        fmap_twophase=expand('bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_magnitude1.nii.gz',zip,**zip_lists['fmapTwoPhase']),
     output:
         dd_jsons = expand('bids_{session}/dataset_description.json',session=config['session_lut'].keys()),
         bidsignores= expand('bids_{session}/.bidsignore',session=config['session_lut'].keys()),

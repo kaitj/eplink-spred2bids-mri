@@ -4,7 +4,6 @@ sites:
   - TWH
   - HSC 
 
-init_lists: False #set this to True to grab new subject lists from XNAT
 
 project_id: EPL31
 
@@ -17,25 +16,80 @@ session_lut:
 suffix_lut:
   T1w:
     query: series_description.str.contains("T1",case=False) or series_description.str.contains("SPGR") and ~series_description.str.contains("flair")
+    outputs:
+      nii: 'bids_{session}/sub-{site}{subject}/anat/sub-{site}{subject}_T1w.nii.gz'
+      json: 'bids_{session}/sub-{site}{subject}/anat/sub-{site}{subject}_T1w.json'
   rest:
     query: series_description.str.contains("rest",case=False) or series_description.str.contains("RS_fMRI") and ~series_description.str.contains('PhysioLog') and ~series_description.str.contains('real')  and image_type_0 == 'ORIGINAL'
+    outputs:
+      nii: 'bids_{session}/sub-{site}{subject}/func/sub-{site}{subject}_task-rest_bold.nii.gz'
+      json: 'bids_{session}/sub-{site}{subject}/func/sub-{site}{subject}_task-rest_bold.json'
   movie:
     query: series_description.str.contains("movie",case=False) and ~series_description.str.contains('PhysioLog') and image_type_0 == 'ORIGINAL'
+    outputs:
+      nii: 'bids_{session}/sub-{site}{subject}/func/sub-{site}{subject}_task-rest_movie.nii.gz'
+      json: 'bids_{session}/sub-{site}{subject}/func/sub-{site}{subject}_task-rest_movie.json'
+  fmapTwoPhase:
+    query: series_description == 'GRE_FieldMap' 
+    outputs:
+      nii: 
+        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_magnitude1.nii.gz'
+        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_phase1.nii.gz'
+        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_magnitude2.nii.gz'
+        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_phase2.nii.gz'
+      json:
+        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_magnitude1.json'
+        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_phase1.json'
+        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_magnitude2.json'
+        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_phase2.json'
+
+
+dlfkal:
   dwimultishellAP:
     query: series_description.str.contains("diff_mb3_95dir_b2000_AP") and image_type_0 == 'ORIGINAL'
+    out_prefix: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-multishell_dir-AP_dwi'
+    exts:
+      nii: nii.gz
+      json: json
+      bval: bval
+      bvec: bvec
+
+
   dwimultishellPA:
     query: series_description.str.contains("diff_mb3_b0_PA") and image_type_0 == 'ORIGINAL'
+    out_prefix: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-multishell_dir-PA_dwi'
+    exts:
+      nii: nii.gz
+      json: json
+
   dwisingleshellAP:
     query: series_description.str.contains("DTI_64") or series_description == 'ep2d_diff_mddw_64_p2_s3 A-P' or series_description == 'DTI_32' and image_type_0 == 'ORIGINAL'
+    out_prefix: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-singleshell_dir-AP_dwi'
+    exts:
+      nii: nii.gz
+      json: json
+      bval: bval
+      bvec: bvec
+
+
   dwisingleshellPA:
     query: series_description == 'ep2d_diff_mddw_6_p2_s3 P-A' and image_type_0 == 'ORIGINAL'
+    out_prefix: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-singleshell_dir-PA_dwi'
+    exts:
+      nii: nii.gz
+      json: json
+
+
   dwiPepolar:
     query: series_description.str.contains('Pepolar') and image_type_0 == 'ORIGINAL'
+    out_prefix: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-pepolar_dir-PA_dwi'
+    exts:
+      nii: nii.gz
+      json: json
+
+
   fmapMagImages:
     query: series_description == 'gre_field_mapping' and  image_type_2 == 'M'
   fmapPhaseDiff:
     query: series_description == 'gre_field_mapping' and  image_type_2 == 'P'
-  fmapTwoPhase:
-    query: series_description == 'GRE_FieldMap' 
-
 

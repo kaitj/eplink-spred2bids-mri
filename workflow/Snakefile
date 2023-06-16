@@ -1,22 +1,20 @@
 configfile: 'config/config.yml'
 
 
-if config['init_lists'] == True:
-    rule all_zip_lists:
-        input:
-            expand('resources/nofailed_subjects_{suffix}.tsv',suffix=config['suffix_lut'].keys())
+rule all_zip_lists:
+    input:
+        expand('resources/nofailed_subjects_{suffix}.tsv',suffix=config['suffix_lut'].keys())
 
 
-    include: 'rules/init_lists.smk'
-else:
-    rule all_bids:
-        input:
-            jsons = expand('bids_{session}/dataset_description.json',session=config['session_lut'].keys())
-        default_target: True
+rule all_bids:
+    input:
+        jsons = expand('bids_{session}/dataset_description.json',session=config['session_lut'].keys())
+    default_target: True
 
 
-    include: 'rules/download.smk'
-    
+include: 'rules/init_lists.smk'
+include: 'rules/download.smk'
+
 
 
 
