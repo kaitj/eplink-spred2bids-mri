@@ -29,67 +29,75 @@ suffix_lut:
     outputs:
       nii: 'bids_{session}/sub-{site}{subject}/func/sub-{site}{subject}_task-rest_movie.nii.gz'
       json: 'bids_{session}/sub-{site}{subject}/func/sub-{site}{subject}_task-rest_movie.json'
-  fmapTwoPhase:
-    query: series_description == 'GRE_FieldMap' 
-    outputs:
-      nii: 
-        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_magnitude1.nii.gz'
-        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_phase1.nii.gz'
-        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_magnitude2.nii.gz'
-        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_phase2.nii.gz'
-      json:
-        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_magnitude1.json'
-        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_phase1.json'
-        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_magnitude2.json'
-        - 'bids_{session}/sub-{site,HSC}{subject}/fmap/sub-{site}{subject}_phase2.json'
 
-
-dlfkal:
   dwimultishellAP:
     query: series_description.str.contains("diff_mb3_95dir_b2000_AP") and image_type_0 == 'ORIGINAL'
-    out_prefix: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-multishell_dir-AP_dwi'
-    exts:
-      nii: nii.gz
-      json: json
-      bval: bval
-      bvec: bvec
-
+    outputs:
+      nii: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-multishell_dir-AP_dwi.nii.gz'
+      json: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-multishell_dir-AP_dwi.json'
+      bval: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-multishell_dir-AP_dwi.bval'
+      bvec: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-multishell_dir-AP_dwi.bvec'
 
   dwimultishellPA:
     query: series_description.str.contains("diff_mb3_b0_PA") and image_type_0 == 'ORIGINAL'
-    out_prefix: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-multishell_dir-PA_dwi'
-    exts:
-      nii: nii.gz
-      json: json
+    outputs:
+      nii: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-multishell_dir-PA_dwi.nii.gz'
+      json: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-multishell_dir-PA_dwi.json'
+
 
   dwisingleshellAP:
     query: series_description.str.contains("DTI_64") or series_description == 'ep2d_diff_mddw_64_p2_s3 A-P' or series_description == 'DTI_32' and image_type_0 == 'ORIGINAL'
-    out_prefix: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-singleshell_dir-AP_dwi'
-    exts:
-      nii: nii.gz
-      json: json
-      bval: bval
-      bvec: bvec
-
+    outputs:
+      nii: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-singleshell_dir-AP_dwi.nii.gz'
+      json: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-singleshell_dir-AP_dwi.json'
+      bval: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-singleshell_dir-AP_dwi.bval'
+      bvec: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-singleshell_dir-AP_dwi.bvec'
 
   dwisingleshellPA:
     query: series_description == 'ep2d_diff_mddw_6_p2_s3 P-A' and image_type_0 == 'ORIGINAL'
-    out_prefix: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-singleshell_dir-PA_dwi'
-    exts:
-      nii: nii.gz
-      json: json
+    outputs:
+      nii: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-singleshell_dir-PA_dwi.nii.gz'
+      json: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-singleshell_dir-PA_dwi.json'
 
 
   dwiPepolar:
     query: series_description.str.contains('Pepolar') and image_type_0 == 'ORIGINAL'
-    out_prefix: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-pepolar_dir-PA_dwi'
-    exts:
-      nii: nii.gz
-      json: json
-
+    outputs:
+      nii: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-pepolar_dir-PA_dwi.nii.gz'
+      json: 'bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-pepolar_dir-PA_dwi.json'
 
   fmapMagImages:
     query: series_description == 'gre_field_mapping' and  image_type_2 == 'M'
+    outputs:
+      nii: 
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_magnitude1.nii.gz'
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_magnitude2.nii.gz'
+      json:
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_magnitude1.json'
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_magnitude2.json'
+
   fmapPhaseDiff:
     query: series_description == 'gre_field_mapping' and  image_type_2 == 'P'
+    outputs:
+      nii: 
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_phasediff.nii.gz'
+      json:
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_phasediff.json'
+
+
+
+  fmapTwoPhase:
+    query: series_description == 'GRE_FieldMap' 
+    outputs:
+      nii: 
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_magnitude1.nii.gz'
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_phase1.nii.gz'
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_magnitude2.nii.gz'
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_phase2.nii.gz'
+      json:
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_magnitude1.json'
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_phase1.json'
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_magnitude2.json'
+        - 'bids_{session}/sub-{site}{subject}/fmap/sub-{site}{subject}_phase2.json'
+
 
