@@ -1,16 +1,20 @@
-configfile: 'config/config_download.yml'
+configfile: 'config/config.yml'
+
+
+rule all_zip_lists:
+    input:
+        expand('resources/nofailed_subjects_{suffix}.tsv',suffix=config['suffix_lut'].keys())
+
 
 rule all_bids:
     input:
-        expand('bids/site-{site}/dataset_description.json',site=config['sites'])
+        jsons = expand('bids_{session}/dataset_description.json',session=config['session_lut'].keys())
+    default_target: True
 
 
-rule all_update_lists:
-    input:
-        expand('resources/subjects_{site}.txt',site=config['sites'])
-
-
-        
-
+include: 'rules/init_lists.smk'
 include: 'rules/download.smk'
-include: 'rules/singularity.smk'
+
+
+
+

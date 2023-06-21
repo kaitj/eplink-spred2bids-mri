@@ -8,6 +8,7 @@ authors = ["Ali Khan <alik@robarts.ca>"]
 python = "^3.8"
 snakemake = "^6.10.0"
 xnat = "^0.3.28"
+pandas = "^2.0.2"
 
 [tool.poetry.dev-dependencies]
 

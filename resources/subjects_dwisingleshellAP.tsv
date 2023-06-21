@@ -1,0 +1,82 @@
+site	subject	session	series_description	scan_uri	image_type_0	image_type_1	image_type_2	image_type_3	image_type_4	image_type_5	image_type_6	image_type_7
+HSC	0002	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07326/experiments/spred_E34286/scans/602	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0003	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07327/experiments/spred_E34288/scans/1201	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0004	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07387/experiments/spred_E34622/scans/402	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0006	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07368/experiments/spred_E34283/scans/502	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0007	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07369/experiments/spred_E34290/scans/302	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0007	followup	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07369/experiments/spred_E35800/scans/602	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0008	followup	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07370/experiments/spred_E37869/scans/402	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0009	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07371/experiments/spred_E34306/scans/601	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0011	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07373/experiments/spred_E34312/scans/1001	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0012	followup	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S08377/experiments/spred_E40417/scans/302	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0013	followup	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S08280/experiments/spred_E38994/scans/302	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0014	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07550/experiments/spred_E34624/scans/902	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0015	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07551/experiments/spred_E34626/scans/402	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0016	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07553/experiments/spred_E34642/scans/502	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0016	followup	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07553/experiments/spred_E34640/scans/202	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0017	followup	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07554/experiments/spred_E35775/scans/401	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0018	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07555/experiments/spred_E34644/scans/1002	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0018	followup	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07555/experiments/spred_E34648/scans/602	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0019	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07556/experiments/spred_E34650/scans/302	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0019	followup	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07556/experiments/spred_E39878/scans/302	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0020	followup	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07592/experiments/spred_E39882/scans/302	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0023	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07595/experiments/spred_E35029/scans/802	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0025	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07672/experiments/spred_E35791/scans/701	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0026	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07673/experiments/spred_E35797/scans/902	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0028	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07712/experiments/spred_E35780/scans/802	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0030	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S07714/experiments/spred_E35796/scans/602	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0034	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S08137/experiments/spred_E36763/scans/202	ORIGINAL	PRIMARY	M_SE	M	SE			
+HSC	0035	baseline	DTI_32	/data/archive/projects/EPL31_HSC/subjects/spred_S08281/experiments/spred_E38996/scans/302	ORIGINAL	PRIMARY	M_SE	M	SE			
+TWH	0001	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S08076/experiments/spred_E37592/scans/10	ORIGINAL	PRIMARY	OTHER					
+TWH	0001	followup	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S08076/experiments/spred_E37600/scans/5	ORIGINAL	PRIMARY	OTHER					
+TWH	0003	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07634/experiments/spred_E35794/scans/11	ORIGINAL	PRIMARY	OTHER					
+TWH	0005	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07656/experiments/spred_E34909/scans/22	ORIGINAL	PRIMARY	OTHER					
+TWH	0006	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07614/experiments/spred_E35100/scans/9	ORIGINAL	PRIMARY	OTHER					
+TWH	0007	followup	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07638/experiments/spred_E37647/scans/4	ORIGINAL	PRIMARY	OTHER					
+TWH	0008	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07657/experiments/spred_E34961/scans/13	ORIGINAL	PRIMARY	OTHER					
+TWH	0008	followup	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07657/experiments/spred_E38189/scans/8	ORIGINAL	PRIMARY	OTHER					
+TWH	0009	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07658/experiments/spred_E35026/scans/10	ORIGINAL	PRIMARY	OTHER					
+TWH	0011	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07659/experiments/spred_E35034/scans/9	ORIGINAL	PRIMARY	OTHER					
+TWH	0012	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07660/experiments/spred_E35038/scans/9	ORIGINAL	PRIMARY	OTHER					
+TWH	0013	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07686/experiments/spred_E35981/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0014	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07661/experiments/spred_E35952/scans/9	ORIGINAL	PRIMARY	OTHER					
+TWH	0017	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07516/experiments/spred_E35954/scans/9	ORIGINAL	PRIMARY	OTHER					
+TWH	0018	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07641/experiments/spred_E35973/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0018	followup	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07641/experiments/spred_E40545/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0019	followup	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07636/experiments/spred_E37628/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0021	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07389/experiments/spred_E40242/scans/15	ORIGINAL	PRIMARY	OTHER					
+TWH	0022	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07407/experiments/spred_E35998/scans/9	ORIGINAL	PRIMARY	OTHER					
+TWH	0023	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07538/experiments/spred_E35177/scans/9	ORIGINAL	PRIMARY	OTHER					
+TWH	0026	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07662/experiments/spred_E38018/scans/11	ORIGINAL	PRIMARY	OTHER					
+TWH	0027	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07666/experiments/spred_E35205/scans/9	ORIGINAL	PRIMARY	OTHER					
+TWH	0029	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07547/experiments/spred_E37874/scans/10	ORIGINAL	PRIMARY	OTHER					
+TWH	0030	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07548/experiments/spred_E36000/scans/8	ORIGINAL	PRIMARY	OTHER					
+TWH	0033	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07644/experiments/spred_E35251/scans/5	ORIGINAL	PRIMARY	OTHER					
+TWH	0035	followup	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07643/experiments/spred_E40549/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0040	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07543/experiments/spred_E35267/scans/10	ORIGINAL	PRIMARY	OTHER					
+TWH	0040	followup	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07543/experiments/spred_E40553/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0042	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07697/experiments/spred_E40258/scans/15	ORIGINAL	PRIMARY	OTHER					
+TWH	0043	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07544/experiments/spred_E38193/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0045	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07536/experiments/spred_E35967/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0048	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07539/experiments/spred_E35969/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0049	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07540/experiments/spred_E37829/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0050	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07552/experiments/spred_E37788/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0051	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07549/experiments/spred_E36020/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0052	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07693/experiments/spred_E36033/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0053	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07684/experiments/spred_E35975/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0054	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S08138/experiments/spred_E37782/scans/15	ORIGINAL	PRIMARY	OTHER					
+TWH	0055	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07581/experiments/spred_E36014/scans/5	ORIGINAL	PRIMARY	OTHER					
+TWH	0056	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07582/experiments/spred_E35977/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0057	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07695/experiments/spred_E37752/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0058	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07682/experiments/spred_E37720/scans/4	ORIGINAL	PRIMARY	OTHER					
+TWH	0059	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07696/experiments/spred_E37706/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0060	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07698/experiments/spred_E38643/scans/7	ORIGINAL	PRIMARY	OTHER					
+TWH	0061	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07694/experiments/spred_E38645/scans/10	ORIGINAL	PRIMARY	OTHER					
+TWH	0061	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S07694/experiments/spred_E38645/scans/11	ORIGINAL	PRIMARY	OTHER					
+TWH	0063	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S08062/experiments/spred_E38647/scans/8	ORIGINAL	PRIMARY	OTHER					
+TWH	0064	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S08063/experiments/spred_E38649/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0065	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S08064/experiments/spred_E38681/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0066	baseline	OPT  DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S08065/experiments/spred_E38683/scans/10	ORIGINAL	PRIMARY	OTHER					
+TWH	0068	baseline	ep2d_diff_mddw_64_p2_s3 A-P	/data/archive/projects/EPL31_TWH/subjects/spred_S08067/experiments/spred_E38672/scans/14	ORIGINAL	PRIMARY	DIFFUSION	NONE				
+TWH	0069	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S08068/experiments/spred_E37694/scans/10	ORIGINAL	PRIMARY	OTHER					
+TWH	0071	baseline	DTI_64 DIRECTIONS	/data/archive/projects/EPL31_TWH/subjects/spred_S08069/experiments/spred_E37673/scans/10	ORIGINAL	PRIMARY	OTHER					

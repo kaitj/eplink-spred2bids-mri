@@ -1,0 +1,27 @@
+site	subject	session	series_description	scan_uri	image_type_0	image_type_1	image_type_2	image_type_3	image_type_4	image_type_5	image_type_6	image_type_7
+HSC	0002	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07326/experiments/spred_E34286/scans/701								
+HSC	0004	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07387/experiments/spred_E34622/scans/801								
+HSC	0006	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07368/experiments/spred_E34283/scans/701								
+HSC	0007	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07369/experiments/spred_E34290/scans/601								
+HSC	0007	followup	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07369/experiments/spred_E35800/scans/801								
+HSC	0008	followup	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07370/experiments/spred_E37869/scans/901								
+HSC	0009	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07371/experiments/spred_E34306/scans/801								
+HSC	0011	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07373/experiments/spred_E34312/scans/1301								
+HSC	0012	followup	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S08377/experiments/spred_E40417/scans/401								
+HSC	0013	followup	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S08280/experiments/spred_E38994/scans/401								
+HSC	0014	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07550/experiments/spred_E34624/scans/1201								
+HSC	0015	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07551/experiments/spred_E34626/scans/1001								
+HSC	0016	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07553/experiments/spred_E34642/scans/1201								
+HSC	0016	followup	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07553/experiments/spred_E34640/scans/801								
+HSC	0017	followup	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07554/experiments/spred_E35775/scans/701								
+HSC	0018	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07555/experiments/spred_E34644/scans/1301								
+HSC	0018	followup	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07555/experiments/spred_E34648/scans/1101								
+HSC	0019	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07556/experiments/spred_E34650/scans/501								
+HSC	0019	followup	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07556/experiments/spred_E39878/scans/401								
+HSC	0020	followup	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07592/experiments/spred_E39882/scans/401								
+HSC	0023	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07595/experiments/spred_E35029/scans/1401								
+HSC	0025	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07672/experiments/spred_E35791/scans/1201								
+HSC	0026	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07673/experiments/spred_E35797/scans/1101								
+HSC	0028	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07712/experiments/spred_E35780/scans/901								
+HSC	0030	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S07714/experiments/spred_E35796/scans/901								
+HSC	0034	baseline	GRE_FieldMap	/data/archive/projects/EPL31_HSC/subjects/spred_S08137/experiments/spred_E36763/scans/1001								

@@ -41,7 +41,7 @@ def infotodict(seqinfo):
         if ('T1' in s.series_description):
             info[t1w].append({'item': s.series_id})
         #rsfmri
-        if ('fMRI' in s.series_description):
+        if ('fMRI' in s.series_description or 'EPI_RS' in s.series_description):
             info[rest].append({'item': s.series_id})
 
         #gre field map   

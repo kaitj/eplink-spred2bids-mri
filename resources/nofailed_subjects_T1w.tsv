@@ -1,0 +1,142 @@
+site	subject	session	series_description	scan_uri	image_type_0	image_type_1	image_type_2	image_type_3	image_type_4	image_type_5	image_type_6	image_type_7
+HSC	0002	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07326/experiments/spred_E34286/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0004	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07387/experiments/spred_E34622/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0006	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07368/experiments/spred_E34283/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0007	baseline	AX 3D T1-TFE_Brainlab	/data/archive/projects/EPL31_HSC/subjects/spred_S07369/experiments/spred_E34290/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0007	followup	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07369/experiments/spred_E35800/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0008	followup	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07370/experiments/spred_E37869/scans/301	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0009	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07371/experiments/spred_E34306/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0011	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07373/experiments/spred_E34312/scans/801	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0012	followup	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S08377/experiments/spred_E40417/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0013	followup	T1	/data/archive/projects/EPL31_HSC/subjects/spred_S08280/experiments/spred_E38994/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0014	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07550/experiments/spred_E34624/scans/801	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0015	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07551/experiments/spred_E34626/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0016	baseline	T1	/data/archive/projects/EPL31_HSC/subjects/spred_S07553/experiments/spred_E34642/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0016	followup	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07553/experiments/spred_E34640/scans/301	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0017	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07554/experiments/spred_E40444/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0017	followup	T1	/data/archive/projects/EPL31_HSC/subjects/spred_S07554/experiments/spred_E35775/scans/301	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0018	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07555/experiments/spred_E34644/scans/401	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0018	followup	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07555/experiments/spred_E34648/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0019	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07556/experiments/spred_E34650/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0019	followup	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07556/experiments/spred_E39878/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0020	followup	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07592/experiments/spred_E39882/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0023	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07595/experiments/spred_E35029/scans/301	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0025	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07672/experiments/spred_E35791/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0026	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07673/experiments/spred_E35797/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0028	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07712/experiments/spred_E35780/scans/701	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0030	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S07714/experiments/spred_E35796/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0034	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S08137/experiments/spred_E36763/scans/301	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0035	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S08281/experiments/spred_E38996/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+HSC	0037	baseline	AX 3D T1-TFE	/data/archive/projects/EPL31_HSC/subjects/spred_S08320/experiments/spred_E40464/scans/201	ORIGINAL	PRIMARY	M_FFE	M	FFE			
+LHS	0001	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07295/experiments/spred_E33978/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0003	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07302/experiments/spred_E33980/scans/9	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0004	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07303/experiments/spred_E33982/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0005	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07304/experiments/spred_E33996/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0007	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07306/experiments/spred_E33998/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0007	followup	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07306/experiments/spred_E36909/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0008	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07309/experiments/spred_E34001/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0008	followup	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07309/experiments/spred_E35787/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0009	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07310/experiments/spred_E34056/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0009	followup	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07310/experiments/spred_E38385/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0011	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07385/experiments/spred_E33803/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0012	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07328/experiments/spred_E34089/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0013	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07364/experiments/spred_E34275/scans/9	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0014	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07329/experiments/spred_E34093/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0015	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07363/experiments/spred_E34270/scans/9	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0015	followup	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07363/experiments/spred_E38956/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0016	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07388/experiments/spred_E33851/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0018	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07653/experiments/spred_E36911/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0019	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07654/experiments/spred_E36074/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0020	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07655/experiments/spred_E35150/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0021	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07671/experiments/spred_E36089/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0022	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07670/experiments/spred_E36097/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0031	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S07949/experiments/spred_E37888/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0034	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08134/experiments/spred_E36927/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0035	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08190/experiments/spred_E38480/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0036	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08278/experiments/spred_E38959/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0038	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08245/experiments/spred_E38773/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0039	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08253/experiments/spred_E38991/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0041	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08364/experiments/spred_E40342/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	0042	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08336/experiments/spred_E39880/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5201	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08189/experiments/spred_E38424/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5202	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08194/experiments/spred_E38428/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5203	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08195/experiments/spred_E38430/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5204	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08196/experiments/spred_E38420/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5205	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08197/experiments/spred_E38422/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5205	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08197/experiments/spred_E38422/scans/8	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5206	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08239/experiments/spred_E38698/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5207	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08274/experiments/spred_E38933/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5208	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08315/experiments/spred_E39495/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5209	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08380/experiments/spred_E40424/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5211	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08382/experiments/spred_E40442/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5213	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08405/experiments/spred_E40801/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5214	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08413/experiments/spred_E40799/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+LHS	5215	baseline	T1w_MPR**	/data/archive/projects/EPL31_LHS/subjects/spred_S08406/experiments/spred_E40778/scans/5	ORIGINAL	PRIMARY	M	ND	NORM			
+TWH	0001	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S08076/experiments/spred_E37592/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0001	followup	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S08076/experiments/spred_E37600/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0002	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07633/experiments/spred_E35202/scans/5	ORIGINAL	PRIMARY	OTHER					
+TWH	0005	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07656/experiments/spred_E34909/scans/12	ORIGINAL	PRIMARY	OTHER					
+TWH	0006	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07614/experiments/spred_E35100/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0007	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07638/experiments/spred_E38187/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0007	followup	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07638/experiments/spred_E37647/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0008	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07657/experiments/spred_E34961/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0008	followup	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07657/experiments/spred_E38189/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0009	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07658/experiments/spred_E35026/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0011	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07659/experiments/spred_E35034/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0012	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07660/experiments/spred_E35038/scans/4	ORIGINAL	PRIMARY	OTHER					
+TWH	0013	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07686/experiments/spred_E35981/scans/8	ORIGINAL	PRIMARY	OTHER					
+TWH	0014	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07661/experiments/spred_E35952/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0017	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07516/experiments/spred_E35954/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0018	followup	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07641/experiments/spred_E40545/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0019	baseline	AX FSPGR 3D	/data/archive/projects/EPL31_TWH/subjects/spred_S07636/experiments/spred_E40231/scans/4	ORIGINAL	PRIMARY	OTHER					
+TWH	0019	followup	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07636/experiments/spred_E37628/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0021	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07389/experiments/spred_E40242/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0022	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07407/experiments/spred_E35998/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0024	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07408/experiments/spred_E37822/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0026	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07662/experiments/spred_E38018/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0027	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07666/experiments/spred_E35205/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0029	baseline	AX FSPGR 3D	/data/archive/projects/EPL31_TWH/subjects/spred_S07547/experiments/spred_E37874/scans/6	ORIGINAL	PRIMARY	OTHER					
+TWH	0030	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07548/experiments/spred_E36000/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0031	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07535/experiments/spred_E35768/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0033	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07644/experiments/spred_E35251/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0033	baseline	SAG 3D IR-SPGR RPT	/data/archive/projects/EPL31_TWH/subjects/spred_S07644/experiments/spred_E35251/scans/11	ORIGINAL	PRIMARY	OTHER					
+TWH	0035	baseline	AX FSPGR 3D	/data/archive/projects/EPL31_TWH/subjects/spred_S07643/experiments/spred_E35245/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0035	followup	AX FSPGR 3D	/data/archive/projects/EPL31_TWH/subjects/spred_S07643/experiments/spred_E40549/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0035	followup	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07643/experiments/spred_E40549/scans/9	ORIGINAL	PRIMARY	OTHER					
+TWH	0037	baseline	AX FSPGR 3D	/data/archive/projects/EPL31_TWH/subjects/spred_S08139/experiments/spred_E37868/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0040	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07543/experiments/spred_E35267/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0040	followup	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07543/experiments/spred_E40553/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0042	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07697/experiments/spred_E40258/scans/13	ORIGINAL	PRIMARY	OTHER					
+TWH	0043	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07544/experiments/spred_E38193/scans/5	ORIGINAL	PRIMARY	OTHER					
+TWH	0045	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07536/experiments/spred_E35967/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0048	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07539/experiments/spred_E35969/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0048	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07539/experiments/spred_E35969/scans/15	ORIGINAL	PRIMARY	OTHER					
+TWH	0050	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07552/experiments/spred_E37788/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0050	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07552/experiments/spred_E37788/scans/15	ORIGINAL	PRIMARY	OTHER					
+TWH	0051	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07549/experiments/spred_E36020/scans/12	ORIGINAL	PRIMARY	OTHER					
+TWH	0052	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07693/experiments/spred_E36033/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0054	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S08138/experiments/spred_E37782/scans/12	ORIGINAL	PRIMARY	OTHER					
+TWH	0056	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07582/experiments/spred_E35977/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0057	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07695/experiments/spred_E37752/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0057	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07695/experiments/spred_E37752/scans/10	ORIGINAL	PRIMARY	OTHER					
+TWH	0058	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07682/experiments/spred_E37720/scans/14	ORIGINAL	PRIMARY	OTHER					
+TWH	0059	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S07696/experiments/spred_E37706/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0067	baseline	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08066/experiments/spred_E38670/scans/5	ORIGINAL	PRIMARY	M	NONE				
+TWH	0068	baseline	sag T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08067/experiments/spred_E38672/scans/4	ORIGINAL	PRIMARY	M	NONE				
+TWH	0068	followup	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08067/experiments/spred_E40483/scans/2001	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0069	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S08068/experiments/spred_E37694/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0071	baseline	SAG 3D IR-SPGR	/data/archive/projects/EPL31_TWH/subjects/spred_S08069/experiments/spred_E37673/scans/3	ORIGINAL	PRIMARY	OTHER					
+TWH	0072	baseline	sag T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08070/experiments/spred_E38679/scans/2	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0075	baseline	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08234/experiments/spred_E38674/scans/2	ORIGINAL	PRIMARY	M	NONE				
+TWH	0076	baseline	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08284/experiments/spred_E40311/scans/2001	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0077	baseline	t1_mprage_sag_p2	/data/archive/projects/EPL31_TWH/subjects/spred_S08235/experiments/spred_E38677/scans/2	ORIGINAL	PRIMARY	M	NONE				
+TWH	0078	baseline	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08285/experiments/spred_E40373/scans/2001	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0078	baseline	T1w_MPR** rpt	/data/archive/projects/EPL31_TWH/subjects/spred_S08285/experiments/spred_E40373/scans/20001	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0080	baseline	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08287/experiments/spred_E40315/scans/2001	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0081	baseline	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08322/experiments/spred_E40320/scans/2001	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0082	baseline	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08288/experiments/spred_E40323/scans/2001	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0083	baseline	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08289/experiments/spred_E40364/scans/2	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0084	baseline	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08286/experiments/spred_E40330/scans/2001	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0085	baseline	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08305/experiments/spred_E40339/scans/2001	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0086	baseline	T1w_MPR**	/data/archive/projects/EPL31_TWH/subjects/spred_S08304/experiments/spred_E40394/scans/2001	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		
+TWH	0086	baseline	T1w_MPR** rpt	/data/archive/projects/EPL31_TWH/subjects/spred_S08304/experiments/spred_E40394/scans/20001	ORIGINAL	PRIMARY	M	NORM	DIS2D	MFSPLIT		

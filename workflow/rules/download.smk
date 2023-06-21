@@ -1,95 +1,84 @@
-import xnat
+import pandas as pd
+
 
 envvars:
     'SPRED_USER',
     'SPRED_PASS'
 
+wildcard_constraints:
+    site='[a-zA-Z]{3}'
 
-def get_subjects(site):
-    if os.path.exists(f'resources/subjects_{site}.txt'):
-        with open(f'resources/subjects_{site}.txt','r') as f:
-            return [s.replace('\n','') for s in f.readlines()]
-
-localrules: get_subject_list, download_mri_zip
-
-rule get_subject_list:
-    params:
-        site_id = lambda wildcards: '{project_id}_{site}'.format(site=wildcards.site,project_id=config['project_id'])
-    output:
-        subj_list = 'resources/subjects_{site}.txt'
-    threads: 32 #to limit concurrency
-    run:
-        session = xnat.connect(config['spred_url'],user=os.environ['SPRED_USER'],password=os.environ['SPRED_PASS'])
-        subjects = [row[0] for row in session.projects[params.site_id].subjects.tabulate(columns=['label'])]
-        subjects_with_mr = list()
-        for subject in subjects:
-            try:
-                exp = session.create_object(f'/data/projects/{params.site_id}/experiments/{subject}_01_SE01_MR')
-                subjects_with_mr.append(subject.split('_')[2]) #strip off all but numeric part of ID
-            except:
-                print(f'{subject} does not have mri')
-
-        with open(output.subj_list, "w") as out:
-            for s in subjects_with_mr:
-                out.write(s+'\n') 
-        session.disconnect()
+localrules:  download_zip
 
 
-rule download_mri_zip:
-    params:
-        remote_path = lambda wildcards: config['remote_path_mri'].format(project_id=config['project_id'],**wildcards)
-    output:
-        zipfile = 'raw/site-{site}/sub-{subject}/mri.zip'
-    threads: 32 #to limit concurrency
-    run:
-        session = xnat.connect(config['spred_url'],user=os.environ['SPRED_USER'],password=os.environ['SPRED_PASS'])
-        experiment = session.create_object(params.remote_path)
-        experiment.download(output.zipfile)
-        session.disconnect()
 
-rule make_dicom_tar:
+#this requires that the subject suffix zip list tables are created (all_zip_lists)
+zip_lists={}
+for suffix in config['suffix_lut'].keys():
+    zip_lists[suffix] = pd.read_table(f'resources/nofailed_subjects_{suffix}.tsv',dtype={'subject':str})[['subject','session','site']].to_dict(orient='list')
+
+
+rule download_zip:
     input:
-        zipfile = 'raw/site-{site}/sub-{subject}/mri.zip'
+        tsv='resources/subjects_{suffix}.tsv'
     params:
-        file_match = '*/scans/*/resources/DICOM/files/*',
-        temp_dir = os.path.join(config['tmp_download'],'raw/site-{site}/sub-{subject}/mri_unzip')
+        query="subject=='{subject}' and session=='{session}' and site=='{site}'"
     output:
-        tar = 'raw/site-{site}/sub-{subject}/mri/sub-{subject}.tar'
-    group: 'dl'
-    shell:
-        'mkdir -p {params.temp_dir} && '
-        'unzip -d {params.temp_dir} {input.zipfile} {params.file_match} && '
-        'tar -cvf {output.tar} {params.temp_dir} && '
-        'rm -rf {params.temp_dir}'
+        zip_file='dicom_zips/site-{site}_subject-{subject}_ses-{session}_{suffix}.zip'
+    threads: 32
+    script:
+        '../scripts/download_zip.py'
 
-       
-rule tar_to_bids:
+
+for suffix in config['suffix_lut']:
+    rule:
+        name: f'convert_dcm_to_bids_{suffix}'
+        input:
+            zip_file=f'dicom_zips/site-{{site}}_subject-{{subject}}_ses-{{session}}_{suffix}.zip'
+        output:
+            **config['suffix_lut'][suffix]['outputs']
+        log: f'logs/convert_dcm_to_bids/sub-{{site}}{{subject}}_ses-{{session}}_{suffix}.txt'
+        group: 'convert'
+        script: 
+            '../scripts/convert_dcm_to_bids.py'
+
+#this hack is needed because the same filenames are required for two diff phase maps (HSC uses twophase, others use phasediff)
+ruleorder:  convert_dcm_to_bids_fmapMagImages > convert_dcm_to_bids_fmapTwoPhase 
+
+
+rule create_bval_bvec_pepolar:
     input:
-        tar = 'raw/site-{site}/sub-{subject}/mri/sub-{subject}.tar',
-        heuristic = lambda wildcards: config['tar2bids'][wildcards.site],
-        container = 'resources/singularity/tar2bids.sif'
-
-    params:
-        temp_bids_dir = 'raw/site-{site}/sub-{subject}/mri/temp_bids',
-        heudiconv_tmpdir = os.path.join(config['tmp_download'],'{site}','{subject}')
+        nii='bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-{acq}_dir-PA_dwi.nii.gz',
     output:
-        dir = directory('bids/site-{site}/sub-{subject}')
-    group: 'dl'
-    shell: 
-        "mkdir -p {params.heudiconv_tmpdir} && "
-        "singularity run -e {input.container} -o {params.temp_bids_dir} "
-        " -w {params.heudiconv_tmpdir} -h {input.heuristic} -N 1 -T 'sub-{{subject}}' {input.tar} || true && " #force clean exit for tar2bids
-        "mkdir -p {output.dir} && rsync -av {params.temp_bids_dir}/sub-{wildcards.subject}/ {output.dir} && "
-        "rm -rf {params.heudiconv_tmpdir}"
+        bvec='bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-{acq}_dir-PA_dwi.bvec',
+        bval='bids_{session}/sub-{site}{subject}/dwi/sub-{site}{subject}_acq-{acq}_dir-PA_dwi.bval',
+    group: 'convert'
+    script: '../scripts/create_bval_bvec_pepolar.py'
 
-
+  
 rule create_dataset_json:
     input:
-        dir = lambda wildcards: expand('bids/site-{site}/sub-{subject}',site=wildcards.site,subject=get_subjects(wildcards.site)),
-        json = 'resources/dataset_description_template.json'
+        **{ suffix:expand(config['suffix_lut'][suffix]['outputs']['nii'],zip,**zip_lists[suffix]) for suffix in config['suffix_lut'].keys()},
+        dd_json = 'resources/dataset_description_template.json',
+        bidsignore = 'resources/bids_root_files/bidsignore',
+        rest_json = 'resources/bids_root_files/task-rest_bold.json',
+        movie_json = 'resources/bids_root_files/task-movie_bold.json',
     output:
-        json = 'bids/site-{site}/dataset_description.json'
-    shell: 'cp {input.json} {output.json}'
+        dd_jsons = expand('bids_{session}/dataset_description.json',session=config['session_lut'].keys()),
+        bidsignores= expand('bids_{session}/.bidsignore',session=config['session_lut'].keys()),
+        rest_jsons= expand('bids_{session}/task-rest_bold.json',session=config['session_lut'].keys()),
+        movie_jsons= expand('bids_{session}/task-movie_bold.json',session=config['session_lut'].keys())
+
+    run: 
+        for out_dd_json in output.dd_jsons:
+            shell('cp {input.dd_json} {out_dd_json}')
+        for out_rest_json in output.rest_jsons:
+            shell('cp {input.rest_json} {out_rest_json}')
+        for out_movie_json in output.movie_jsons:
+            shell('cp {input.movie_json} {out_movie_json}')
+        for out_bidsignore in output.bidsignores:
+            shell('cp {input.bidsignore} {out_bidsignore}')
+ 
 
 
 

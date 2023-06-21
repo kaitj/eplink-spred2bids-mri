@@ -1,0 +1,2 @@
+Error: Check sorted order: 4D dataset has 1 volumes, but volume index ranges from 36352..36417
+Error: Missing images. Found 4296 images, expected 66 slices per volume and instance number (0020,0013) ranges from 67 to 4488
