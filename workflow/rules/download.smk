@@ -37,7 +37,7 @@ rule get_subject_list:
 
 rule download_mri_zip:
     params:
-        remote_path = lambda wildcards: config['remote_path_mri'].format(project_id=config['project_id'],**wildcards)
+        remote_path = lambda wildcards: config['remote_path_mri'].format(project_id=config['project_id'], site_stripped=wildcards['site'].split('_')[0] if '_' in wildcards['site'] else wildcards['site'], **wildcards)
     output:
         zipfile = 'raw/site-{site}/sub-{subject}/mri.zip'
     threads: 32 #to limit concurrency
