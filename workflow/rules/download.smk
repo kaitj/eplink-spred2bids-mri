@@ -19,12 +19,22 @@ rule get_subject_list:
         subj_list = 'resources/subjects/subjects_{site}.txt'
     threads: 32 #to limit concurrency
     run:
-        session = xnat.connect(config['spred_url'],user=os.environ['SPRED_USER'],password=os.environ['SPRED_PASS'])
-        subjects = [row[0] for row in session.projects[params.site_id].subjects.tabulate(columns=['label'])]
+        session = xnat.connect(
+            config['spred_url'],
+            user=os.environ['SPRED_USER'],
+            password=os.environ['SPRED_PASS']
+        )
+        subjects = [
+            row[0] for row in session.projects[params.site_id].subjects.tabulate(
+                columns=['label']
+            )
+        ]
         subjects_with_mr = list()
         for subject in subjects:
             try:
-                exp = session.create_object(f'/data/projects/{params.site_id}/experiments/{subject}_01_SE01_MR')
+                exp = session.create_object(
+                    f'/data/projects/{params.site_id}/experiments/{subject}_01_SE01_MR'
+                )
                 subjects_with_mr.append(subject.split('_')[2]) #strip off all but numeric part of ID
             except:
                 print(f'{subject} does not have mri')
@@ -34,15 +44,26 @@ rule get_subject_list:
                 out.write(s+'\n') 
         session.disconnect()
 
-
+ 
 rule download_mri_zip:
     params:
-        remote_path = lambda wildcards: config['remote_path_mri'].format(project_id=config['project_id'], site_stripped=wildcards['site'].split('_')[0] if '_' in wildcards['site'] else wildcards['site'], **wildcards)
+        remote_path = lambda wildcards: config['remote_path_mri'].format(
+            project_id=config['project_id'], 
+            site_stripped=(
+                wildcards['site'].split('_')[0] 
+                if '_' in wildcards['site'] else wildcards['site']
+            ), 
+            **wildcards
+        )
     output:
         zipfile = 'raw/site-{site}/sub-{subject}/mri.zip'
     threads: 32 #to limit concurrency
     run:
-        session = xnat.connect(config['spred_url'],user=os.environ['SPRED_USER'],password=os.environ['SPRED_PASS'])
+        session = xnat.connect(
+            config['spred_url'],
+            user=os.environ['SPRED_USER'],
+            password=os.environ['SPRED_PASS']
+        )
         experiment = session.create_object(params.remote_path)
         experiment.download(output.zipfile)
         session.disconnect()
@@ -52,7 +73,9 @@ rule make_dicom_tar:
         zipfile = 'raw/site-{site}/sub-{subject}/mri.zip'
     params:
         file_match = '*/scans/*/resources/DICOM/files/*',
-        temp_dir = os.path.join(config['tmp_download'],'raw/site-{site}/sub-{subject}/mri_unzip')
+        temp_dir = os.path.join(
+            config['tmp_download'], 'raw/site-{site}/sub-{subject}/mri_unzip'
+        ),
     output:
         tar = 'raw/site-{site}/sub-{subject}/mri/sub-{subject}.tar'
     group: 'dl'
@@ -67,10 +90,14 @@ rule tar_to_bids:
     input:
         tar = 'raw/site-{site}/sub-{subject}/mri/sub-{subject}.tar',
         heuristic = lambda wildcards: config['tar2bids'][wildcards.site],
-        container = 'resources/singularity/tar2bids.sif'
+        container = 'resources/singularity/tar2bids_v0.2.2.sif'
     params:
         temp_bids_dir = 'raw/site-{site}/sub-{subject}/mri/temp_bids',
-        heudiconv_tmpdir = os.path.join(config['tmp_download'],'{site}','{subject}')
+        heudiconv_tmpdir = os.path.join(
+            config['tmp_download'],
+            '{site}',
+            '{subject}'
+        )
     output:
         dir = directory('bids/site-{site}/sub-{subject}')
     group: 'dl'
@@ -81,11 +108,16 @@ rule tar_to_bids:
         "mkdir -p {output.dir} && rsync -av {params.temp_bids_dir}/sub-{wildcards.subject}/ {output.dir} && "
         "rm -rf {params.heudiconv_tmpdir}"
 
-
 rule create_dataset_json:
     input:
-        dir = lambda wildcards: expand('bids/site-{site}/sub-{subject}',site=wildcards.site,subject=get_subjects(wildcards.site)),
+        dir = lambda wildcards: expand(
+            'bids/site-{site}/sub-{subject}', 
+            site=wildcards.site, 
+            subject=get_subjects(wildcards.site)
+        ),
         json = 'resources/dataset_description_template.json'
     output:
         json = 'bids/site-{site}/dataset_description.json'
-    shell: 'cp {input.json} {output.json}'
+    shell:
+        'mkdir -p {input.dir} && ' 
+        'cp {input.json} {output.json}'

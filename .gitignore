@@ -2,4 +2,6 @@ __pycache__/
 resources/singularity/*
 .snakemake/
 bids/
+raw/
 *venv*/
+.credentials

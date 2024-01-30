@@ -7,10 +7,8 @@ rule all_bids:
 
 rule all_update_lists:
     input:
-        expand('resources/subjects_{site}.txt',site=config['sites'])
+        expand('resources/subjects/subjects_{site}.txt',site=config['sites'])
 
-
-        
 
 include: 'rules/download.smk'
 include: 'rules/singularity.smk'
