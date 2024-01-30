@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "eplink-prelim"
+name = "eplink-spred2bids-mri"
 version = "0.1.0"
 description = ""
 authors = ["Ali Khan <alik@robarts.ca>"]
@@ -8,6 +8,7 @@ authors = ["Ali Khan <alik@robarts.ca>"]
 python = "^3.8"
 snakemake = "^6.10.0"
 xnat = "^0.3.28"
+pulp = "<2.8.0"
 
 [tool.poetry.dev-dependencies]
 
