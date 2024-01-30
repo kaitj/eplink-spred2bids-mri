@@ -1,4 +1,4 @@
-configfile: 'config/config_download.yml'
+configfile: 'config/config_download_LHS_B.yml'
 
 rule all_bids:
     input:

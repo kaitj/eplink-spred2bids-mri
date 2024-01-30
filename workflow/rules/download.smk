@@ -6,8 +6,8 @@ envvars:
 
 
 def get_subjects(site):
-    if os.path.exists(f'resources/subjects_{site}.txt'):
-        with open(f'resources/subjects_{site}.txt','r') as f:
+    if os.path.exists(subject_file := f'resources/subjects/subjects_{site}.txt'):
+        with open(subject_file,'r') as f:
             return [s.replace('\n','') for s in f.readlines()]
 
 localrules: get_subject_list, download_mri_zip
@@ -16,7 +16,7 @@ rule get_subject_list:
     params:
         site_id = lambda wildcards: '{project_id}_{site}'.format(site=wildcards.site,project_id=config['project_id'])
     output:
-        subj_list = 'resources/subjects_{site}.txt'
+        subj_list = 'resources/subjects/subjects_{site}.txt'
     threads: 32 #to limit concurrency
     run:
         session = xnat.connect(config['spred_url'],user=os.environ['SPRED_USER'],password=os.environ['SPRED_PASS'])
@@ -68,7 +68,6 @@ rule tar_to_bids:
         tar = 'raw/site-{site}/sub-{subject}/mri/sub-{subject}.tar',
         heuristic = lambda wildcards: config['tar2bids'][wildcards.site],
         container = 'resources/singularity/tar2bids.sif'
-
     params:
         temp_bids_dir = 'raw/site-{site}/sub-{subject}/mri/temp_bids',
         heudiconv_tmpdir = os.path.join(config['tmp_download'],'{site}','{subject}')
@@ -90,6 +89,3 @@ rule create_dataset_json:
     output:
         json = 'bids/site-{site}/dataset_description.json'
     shell: 'cp {input.json} {output.json}'
-
-
-
