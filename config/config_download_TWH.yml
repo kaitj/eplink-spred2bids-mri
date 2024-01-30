@@ -1,0 +1,15 @@
+spred_url: 'https://spred.braincode.ca/spred/'
+sites:
+  - TWH 
+
+project_id: EPL19
+
+tmp_download: '/localscratch'
+
+remote_path_mri: '/data/projects/{project_id}_{site}/experiments/{project_id}_{site_stripped}_{subject}_01_SE01_MR'
+
+tar2bids:
+  TWH: 'resources/heuristics/twh_eplink.py'
+
+containers:
+  tar2bids: 'docker://khanlab/tar2bids:v0.2.2'
